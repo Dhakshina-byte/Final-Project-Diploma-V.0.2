@@ -1,5 +1,6 @@
 ﻿using Finalproject.Models;
 using Finalproject.Services;
+using System.Collections.Generic;
 
 namespace Finalproject.Controllers
 {
@@ -21,5 +22,16 @@ namespace Finalproject.Controllers
         {
             return _employeeService.LoginEmployee(email);
         }
+
+        public bool UpdateEmployee(Employee employee)
+        {
+            return _employeeService.UpdateEmployee(employee);
+        }
+
+        public List<Employee> GetEmployees()
+        {
+            return _employeeService.GetAllEmployees();
+        }
+
     }
 }
