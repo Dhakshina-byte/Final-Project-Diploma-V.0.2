@@ -168,6 +168,12 @@
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Views\CEO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CEO.Designer.cs">
+      <DependentUpon>CEO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,12 +189,6 @@
     <Compile Include="Services\DepartmentService.cs" />
     <Compile Include="Services\EmployeeService.cs" />
     <Compile Include="Services\RoleService.cs" />
-    <Compile Include="Views\RegisterEmployeeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\RegisterEmployeeForm.Designer.cs">
-      <DependentUpon>RegisterEmployeeForm.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -198,8 +198,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\RegisterEmployeeForm.resx">
-      <DependentUpon>RegisterEmployeeForm.cs</DependentUpon>
+    <EmbeddedResource Include="Views\CEO.resx">
+      <DependentUpon>CEO.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
