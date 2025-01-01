@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using Finalproject.Models;
-using Finalproject.Utils;
 
 namespace Finalproject.Services
 {
