@@ -13,7 +13,6 @@ using System.Windows.Forms;
 namespace Finalproject.Views
 {
     public partial class CEO : MaterialForm
-
     {
         public CEO()
         {
@@ -31,6 +30,11 @@ namespace Finalproject.Views
         }
 
         private void CEO_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Employees_Click(object sender, EventArgs e)
         {
 
         }
