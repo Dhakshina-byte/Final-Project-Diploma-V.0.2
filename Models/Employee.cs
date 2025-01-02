@@ -8,12 +8,17 @@ namespace Finalproject.Models
 {
     public class Employee
     {
-        public int EID { get; set; }
+        // Public properties
+        public int ID { get; set; }
+        public string Name { get; set; }
         public string Email { get; set; }
+        public string DOB { get; set; }
         public string Mobile { get; set; }
         public string City { get; set; }
         public string Address { get; set; }
-        public int Role_ID { get; set; }
-        public int Department_ID { get; set; }
+        public string username { get; set; }
+        public string Password { get; set; }
+        
     }
 }
+

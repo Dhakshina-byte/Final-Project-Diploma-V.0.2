@@ -122,8 +122,7 @@ CREATE TABLE Payment (
 
 -- Sales Budget Table
 CREATE TABLE Sales_Budget (
-    Budget_ID INT PRIMARY KEY IDENTITY(1,1),
-    Year INT NOT NULL DEFAULT YEAR(GETDATE()),
+    Year INT NOT NULL DEFAULT YEAR(GETDATE()) PRIMARY KEY,
     Budget_amount DECIMAL(10, 2) NOT NULL,
     Department_ID INT,
     FOREIGN KEY (Department_ID) REFERENCES Department(D_ID)
@@ -136,7 +135,7 @@ CREATE TABLE Budget_Expenses (
     Expense_Amount DECIMAL(10, 2) NOT NULL,
     Expense_Date DATE,
     Budget_ID INT,
-    FOREIGN KEY (Budget_ID) REFERENCES Sales_Budget(Budget_ID)
+    FOREIGN KEY (Budget_ID) REFERENCES Sales_Budget(Year)
 );
 
 -- Relationships and Foreign Keys
@@ -159,6 +158,8 @@ ALTER TABLE Sales ADD FOREIGN KEY (Cus_ID) REFERENCES Customers(Cus_ID);
 -- Linking Reports with Payments
 ALTER TABLE Reports ADD Pay_ID INT;
 ALTER TABLE Reports ADD FOREIGN KEY (Pay_ID) REFERENCES Payment(Pay_ID);
+
+
 
 -- Add additional relations as per specific requirements.
 

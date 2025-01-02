@@ -49,6 +49,7 @@ namespace Finalproject.Services
             string query = "SELECT Sales_Budget.Year, Budget_amount - ISNULL(SUM(Expense_Amount), 0) AS RemainingAmount FROM Sales_Budget LEFT JOIN Budget_Expenses ON Sales_Budget.Year = Budget_Expenses.Budget_ID GROUP BY Sales_Budget.Year, Sales_Budget.Budget_amount";
             SqlCommand cmd = new SqlCommand(query, connection);
             decimal remainingAmount = 0;
+            connection.Close();
             connection.Open();
             using (SqlDataReader reader = cmd.ExecuteReader())
             {

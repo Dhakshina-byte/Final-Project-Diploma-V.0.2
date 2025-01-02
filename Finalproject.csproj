@@ -188,8 +188,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\SalesController.cs" />
+    <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Sales.cs" />
+    <Compile Include="Services\EmployeeService.cs" />
     <Compile Include="Services\SalesService.cs" />
     <Compile Include="Views\CEO.cs">
       <SubType>Form</SubType>

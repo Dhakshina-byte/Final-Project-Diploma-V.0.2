@@ -29,12 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CEO));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.Home = new System.Windows.Forms.TabPage();
@@ -43,8 +46,8 @@
             this.Empsavebtn = new MaterialSkin.Controls.MaterialButton();
             this.Empcancelbtn = new MaterialSkin.Controls.MaterialButton();
             this.ll = new System.Windows.Forms.Label();
-            this.Dobdate = new System.Windows.Forms.DateTimePicker();
-            this.Addressmultilinebox = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
+            this.EmpDOBtxtbox = new System.Windows.Forms.DateTimePicker();
+            this.EmpAddresstxtbox = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
             this.Address = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.EmpRolebox = new MaterialSkin.Controls.MaterialComboBox();
@@ -60,21 +63,21 @@
             this.EmpSearchtxtbox = new MaterialSkin.Controls.MaterialTextBox();
             this.EmpSearchbtn = new System.Windows.Forms.Button();
             this.SalesBudget = new System.Windows.Forms.TabPage();
+            this.Extendbtn = new MaterialSkin.Controls.MaterialButton();
+            this.SETbtn = new MaterialSkin.Controls.MaterialButton();
+            this.remindertxtbox = new MaterialSkin.Controls.MaterialTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.budgetlal = new System.Windows.Forms.Label();
+            this.BudgetAssigntxtbox = new MaterialSkin.Controls.MaterialTextBox2();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Records = new System.Windows.Forms.TabPage();
-            this.RecodsDataGridView = new System.Windows.Forms.DataGridView();
+            this.RecodsDataGridView = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.Recordscombobox = new MaterialSkin.Controls.MaterialComboBox();
             this.NetProfit = new System.Windows.Forms.TabPage();
             this.Pricing = new System.Windows.Forms.TabPage();
             this.StockLevels = new System.Windows.Forms.TabPage();
             this.Report = new System.Windows.Forms.TabPage();
-            this.Sales = new System.Windows.Forms.TabPage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.BudgetAssigntxtbox = new MaterialSkin.Controls.MaterialTextBox2();
-            this.budgetlal = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.remindertxtbox = new MaterialSkin.Controls.MaterialTextBox();
-            this.SETbtn = new MaterialSkin.Controls.MaterialButton();
-            this.Extendbtn = new MaterialSkin.Controls.MaterialButton();
             this.materialTabControl1.SuspendLayout();
             this.Employees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGridView)).BeginInit();
@@ -94,7 +97,6 @@
             this.materialTabControl1.Controls.Add(this.Pricing);
             this.materialTabControl1.Controls.Add(this.StockLevels);
             this.materialTabControl1.Controls.Add(this.Report);
-            this.materialTabControl1.Controls.Add(this.Sales);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialTabControl1.ImageList = this.imageList1;
@@ -122,8 +124,8 @@
             this.Employees.Controls.Add(this.Empsavebtn);
             this.Employees.Controls.Add(this.Empcancelbtn);
             this.Employees.Controls.Add(this.ll);
-            this.Employees.Controls.Add(this.Dobdate);
-            this.Employees.Controls.Add(this.Addressmultilinebox);
+            this.Employees.Controls.Add(this.EmpDOBtxtbox);
+            this.Employees.Controls.Add(this.EmpAddresstxtbox);
             this.Employees.Controls.Add(this.Address);
             this.Employees.Controls.Add(this.label5);
             this.Employees.Controls.Add(this.EmpRolebox);
@@ -151,21 +153,21 @@
             // EmployeeDataGridView
             // 
             this.EmployeeDataGridView.AllowCustomTheming = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.EmployeeDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.EmployeeDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.EmployeeDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.EmployeeDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EmployeeDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.EmployeeDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.EmployeeDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.EmployeeDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.EmployeeDataGridView.ColumnHeadersHeight = 40;
             this.EmployeeDataGridView.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.EmployeeDataGridView.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
@@ -185,14 +187,14 @@
             this.EmployeeDataGridView.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.EmployeeDataGridView.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             this.EmployeeDataGridView.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.EmployeeDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.EmployeeDataGridView.DefaultCellStyle = dataGridViewCellStyle9;
             this.EmployeeDataGridView.EnableHeadersVisualStyles = false;
             this.EmployeeDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.EmployeeDataGridView.HeaderBackColor = System.Drawing.Color.DodgerBlue;
@@ -207,6 +209,7 @@
             this.EmployeeDataGridView.Size = new System.Drawing.Size(1386, 818);
             this.EmployeeDataGridView.TabIndex = 20;
             this.EmployeeDataGridView.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.EmployeeDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeeDataGridView_CellContentClick);
             // 
             // Empsavebtn
             // 
@@ -226,6 +229,7 @@
             this.Empsavebtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.Empsavebtn.UseAccentColor = false;
             this.Empsavebtn.UseVisualStyleBackColor = true;
+            this.Empsavebtn.Click += new System.EventHandler(this.Empsavebtn_Click);
             // 
             // Empcancelbtn
             // 
@@ -255,37 +259,37 @@
             this.ll.TabIndex = 17;
             this.ll.Text = "Date of Birth";
             // 
-            // Dobdate
+            // EmpDOBtxtbox
             // 
-            this.Dobdate.Location = new System.Drawing.Point(1508, 749);
-            this.Dobdate.Name = "Dobdate";
-            this.Dobdate.Size = new System.Drawing.Size(398, 22);
-            this.Dobdate.TabIndex = 16;
+            this.EmpDOBtxtbox.Location = new System.Drawing.Point(1508, 749);
+            this.EmpDOBtxtbox.Name = "EmpDOBtxtbox";
+            this.EmpDOBtxtbox.Size = new System.Drawing.Size(398, 22);
+            this.EmpDOBtxtbox.TabIndex = 16;
             // 
-            // Addressmultilinebox
+            // EmpAddresstxtbox
             // 
-            this.Addressmultilinebox.AnimateReadOnly = false;
-            this.Addressmultilinebox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Addressmultilinebox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.Addressmultilinebox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Addressmultilinebox.Depth = 0;
-            this.Addressmultilinebox.HideSelection = true;
-            this.Addressmultilinebox.Location = new System.Drawing.Point(1508, 560);
-            this.Addressmultilinebox.MaxLength = 32767;
-            this.Addressmultilinebox.MouseState = MaterialSkin.MouseState.OUT;
-            this.Addressmultilinebox.Name = "Addressmultilinebox";
-            this.Addressmultilinebox.PasswordChar = '\0';
-            this.Addressmultilinebox.ReadOnly = false;
-            this.Addressmultilinebox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.Addressmultilinebox.SelectedText = "";
-            this.Addressmultilinebox.SelectionLength = 0;
-            this.Addressmultilinebox.SelectionStart = 0;
-            this.Addressmultilinebox.ShortcutsEnabled = true;
-            this.Addressmultilinebox.Size = new System.Drawing.Size(398, 125);
-            this.Addressmultilinebox.TabIndex = 15;
-            this.Addressmultilinebox.TabStop = false;
-            this.Addressmultilinebox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Addressmultilinebox.UseSystemPasswordChar = false;
+            this.EmpAddresstxtbox.AnimateReadOnly = false;
+            this.EmpAddresstxtbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.EmpAddresstxtbox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.EmpAddresstxtbox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.EmpAddresstxtbox.Depth = 0;
+            this.EmpAddresstxtbox.HideSelection = true;
+            this.EmpAddresstxtbox.Location = new System.Drawing.Point(1508, 560);
+            this.EmpAddresstxtbox.MaxLength = 32767;
+            this.EmpAddresstxtbox.MouseState = MaterialSkin.MouseState.OUT;
+            this.EmpAddresstxtbox.Name = "EmpAddresstxtbox";
+            this.EmpAddresstxtbox.PasswordChar = '\0';
+            this.EmpAddresstxtbox.ReadOnly = false;
+            this.EmpAddresstxtbox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.EmpAddresstxtbox.SelectedText = "";
+            this.EmpAddresstxtbox.SelectionLength = 0;
+            this.EmpAddresstxtbox.SelectionStart = 0;
+            this.EmpAddresstxtbox.ShortcutsEnabled = true;
+            this.EmpAddresstxtbox.Size = new System.Drawing.Size(398, 125);
+            this.EmpAddresstxtbox.TabIndex = 15;
+            this.EmpAddresstxtbox.TabStop = false;
+            this.EmpAddresstxtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.EmpAddresstxtbox.UseSystemPasswordChar = false;
             // 
             // Address
             // 
@@ -320,7 +324,6 @@
             this.EmpRolebox.IntegralHeight = false;
             this.EmpRolebox.ItemHeight = 43;
             this.EmpRolebox.Items.AddRange(new object[] {
-            "ALL",
             "Accountant",
             "Sales Director",
             "Inventory Manager",
@@ -464,6 +467,7 @@
             this.EmpRoleCombobox.Size = new System.Drawing.Size(295, 49);
             this.EmpRoleCombobox.StartIndex = 0;
             this.EmpRoleCombobox.TabIndex = 3;
+            this.EmpRoleCombobox.SelectedIndexChanged += new System.EventHandler(this.EmpRoleCombobox_SelectedIndexChanged);
             // 
             // EmpSearchtxtbox
             // 
@@ -481,6 +485,7 @@
             this.EmpSearchtxtbox.TabIndex = 1;
             this.EmpSearchtxtbox.Text = "";
             this.EmpSearchtxtbox.TrailingIcon = null;
+            this.EmpSearchtxtbox.TextChanged += new System.EventHandler(this.EmpSearchtxtbox_TextChanged);
             // 
             // EmpSearchbtn
             // 
@@ -490,6 +495,7 @@
             this.EmpSearchbtn.Size = new System.Drawing.Size(60, 48);
             this.EmpSearchbtn.TabIndex = 2;
             this.EmpSearchbtn.UseVisualStyleBackColor = true;
+            this.EmpSearchbtn.Click += new System.EventHandler(this.EmpSearchbtn_Click);
             // 
             // SalesBudget
             // 
@@ -508,6 +514,110 @@
             this.SalesBudget.TabIndex = 0;
             this.SalesBudget.Text = "Sales Budget";
             this.SalesBudget.UseVisualStyleBackColor = true;
+            // 
+            // Extendbtn
+            // 
+            this.Extendbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Extendbtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.Extendbtn.Depth = 0;
+            this.Extendbtn.HighEmphasis = true;
+            this.Extendbtn.Icon = null;
+            this.Extendbtn.Location = new System.Drawing.Point(1646, 151);
+            this.Extendbtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Extendbtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Extendbtn.Name = "Extendbtn";
+            this.Extendbtn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.Extendbtn.Size = new System.Drawing.Size(77, 36);
+            this.Extendbtn.TabIndex = 6;
+            this.Extendbtn.Text = "Extend";
+            this.Extendbtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.Extendbtn.UseAccentColor = false;
+            this.Extendbtn.UseVisualStyleBackColor = true;
+            this.Extendbtn.Click += new System.EventHandler(this.Extendbtn_Click);
+            // 
+            // SETbtn
+            // 
+            this.SETbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.SETbtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.SETbtn.Depth = 0;
+            this.SETbtn.HighEmphasis = true;
+            this.SETbtn.Icon = null;
+            this.SETbtn.Location = new System.Drawing.Point(1863, 106);
+            this.SETbtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.SETbtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.SETbtn.Name = "SETbtn";
+            this.SETbtn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.SETbtn.Size = new System.Drawing.Size(64, 36);
+            this.SETbtn.TabIndex = 5;
+            this.SETbtn.Text = "Set";
+            this.SETbtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.SETbtn.UseAccentColor = false;
+            this.SETbtn.UseVisualStyleBackColor = true;
+            this.SETbtn.Click += new System.EventHandler(this.SETbtn_Click);
+            // 
+            // remindertxtbox
+            // 
+            this.remindertxtbox.AnimateReadOnly = false;
+            this.remindertxtbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.remindertxtbox.Depth = 0;
+            this.remindertxtbox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.remindertxtbox.LeadingIcon = null;
+            this.remindertxtbox.Location = new System.Drawing.Point(393, 384);
+            this.remindertxtbox.MaxLength = 50;
+            this.remindertxtbox.MouseState = MaterialSkin.MouseState.OUT;
+            this.remindertxtbox.Multiline = false;
+            this.remindertxtbox.Name = "remindertxtbox";
+            this.remindertxtbox.ReadOnly = true;
+            this.remindertxtbox.Size = new System.Drawing.Size(159, 50);
+            this.remindertxtbox.TabIndex = 4;
+            this.remindertxtbox.Text = "";
+            this.remindertxtbox.TrailingIcon = null;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(431, 338);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 16);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Remaining ";
+            // 
+            // budgetlal
+            // 
+            this.budgetlal.AutoSize = true;
+            this.budgetlal.Location = new System.Drawing.Point(1508, 62);
+            this.budgetlal.Name = "budgetlal";
+            this.budgetlal.Size = new System.Drawing.Size(73, 16);
+            this.budgetlal.TabIndex = 2;
+            this.budgetlal.Text = "Set Budget";
+            // 
+            // BudgetAssigntxtbox
+            // 
+            this.BudgetAssigntxtbox.AnimateReadOnly = false;
+            this.BudgetAssigntxtbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BudgetAssigntxtbox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.BudgetAssigntxtbox.Depth = 0;
+            this.BudgetAssigntxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.BudgetAssigntxtbox.HideSelection = true;
+            this.BudgetAssigntxtbox.LeadingIcon = null;
+            this.BudgetAssigntxtbox.Location = new System.Drawing.Point(1511, 94);
+            this.BudgetAssigntxtbox.MaxLength = 32767;
+            this.BudgetAssigntxtbox.MouseState = MaterialSkin.MouseState.OUT;
+            this.BudgetAssigntxtbox.Name = "BudgetAssigntxtbox";
+            this.BudgetAssigntxtbox.PasswordChar = '\0';
+            this.BudgetAssigntxtbox.PrefixSuffixText = null;
+            this.BudgetAssigntxtbox.ReadOnly = false;
+            this.BudgetAssigntxtbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.BudgetAssigntxtbox.SelectedText = "";
+            this.BudgetAssigntxtbox.SelectionLength = 0;
+            this.BudgetAssigntxtbox.SelectionStart = 0;
+            this.BudgetAssigntxtbox.ShortcutsEnabled = true;
+            this.BudgetAssigntxtbox.Size = new System.Drawing.Size(345, 48);
+            this.BudgetAssigntxtbox.TabIndex = 1;
+            this.BudgetAssigntxtbox.TabStop = false;
+            this.BudgetAssigntxtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.BudgetAssigntxtbox.TrailingIcon = null;
+            this.BudgetAssigntxtbox.UseSystemPasswordChar = false;
             // 
             // chart1
             // 
@@ -529,6 +639,7 @@
             // Records
             // 
             this.Records.Controls.Add(this.RecodsDataGridView);
+            this.Records.Controls.Add(this.Recordscombobox);
             this.Records.ImageKey = "icons8-records-32 (1).png";
             this.Records.Location = new System.Drawing.Point(4, 39);
             this.Records.Name = "Records";
@@ -539,14 +650,90 @@
             // 
             // RecodsDataGridView
             // 
-            this.RecodsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.RecodsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RecodsDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.RecodsDataGridView.AllowCustomTheming = false;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.RecodsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.RecodsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.RecodsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.RecodsDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.RecodsDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.RecodsDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.RecodsDataGridView.ColumnHeadersHeight = 40;
+            this.RecodsDataGridView.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.RecodsDataGridView.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.RecodsDataGridView.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.RecodsDataGridView.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.RecodsDataGridView.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.RecodsDataGridView.CurrentTheme.BackColor = System.Drawing.Color.White;
+            this.RecodsDataGridView.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.RecodsDataGridView.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.RecodsDataGridView.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.RecodsDataGridView.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.RecodsDataGridView.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            this.RecodsDataGridView.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.RecodsDataGridView.CurrentTheme.Name = null;
+            this.RecodsDataGridView.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.RecodsDataGridView.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.RecodsDataGridView.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.RecodsDataGridView.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.RecodsDataGridView.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.RecodsDataGridView.DefaultCellStyle = dataGridViewCellStyle12;
+            this.RecodsDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.RecodsDataGridView.EnableHeadersVisualStyles = false;
+            this.RecodsDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.RecodsDataGridView.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.RecodsDataGridView.HeaderBgColor = System.Drawing.Color.Empty;
+            this.RecodsDataGridView.HeaderForeColor = System.Drawing.Color.White;
+            this.RecodsDataGridView.Location = new System.Drawing.Point(0, 116);
             this.RecodsDataGridView.Name = "RecodsDataGridView";
+            this.RecodsDataGridView.RowHeadersVisible = false;
             this.RecodsDataGridView.RowHeadersWidth = 51;
-            this.RecodsDataGridView.RowTemplate.Height = 24;
-            this.RecodsDataGridView.Size = new System.Drawing.Size(1928, 911);
-            this.RecodsDataGridView.TabIndex = 0;
+            this.RecodsDataGridView.RowTemplate.Height = 40;
+            this.RecodsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.RecodsDataGridView.Size = new System.Drawing.Size(1928, 795);
+            this.RecodsDataGridView.TabIndex = 5;
+            this.RecodsDataGridView.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            // 
+            // Recordscombobox
+            // 
+            this.Recordscombobox.AutoResize = false;
+            this.Recordscombobox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Recordscombobox.Depth = 0;
+            this.Recordscombobox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.Recordscombobox.DropDownHeight = 174;
+            this.Recordscombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Recordscombobox.DropDownWidth = 121;
+            this.Recordscombobox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.Recordscombobox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Recordscombobox.FormattingEnabled = true;
+            this.Recordscombobox.IntegralHeight = false;
+            this.Recordscombobox.ItemHeight = 43;
+            this.Recordscombobox.Items.AddRange(new object[] {
+            "ALL",
+            "Sales",
+            "Services"});
+            this.Recordscombobox.Location = new System.Drawing.Point(26, 29);
+            this.Recordscombobox.MaxDropDownItems = 4;
+            this.Recordscombobox.MouseState = MaterialSkin.MouseState.OUT;
+            this.Recordscombobox.Name = "Recordscombobox";
+            this.Recordscombobox.Size = new System.Drawing.Size(295, 49);
+            this.Recordscombobox.StartIndex = 0;
+            this.Recordscombobox.TabIndex = 4;
             // 
             // NetProfit
             // 
@@ -588,16 +775,6 @@
             this.Report.Text = " Report";
             this.Report.UseVisualStyleBackColor = true;
             // 
-            // Sales
-            // 
-            this.Sales.ImageKey = "icons8-total-sales-32.png";
-            this.Sales.Location = new System.Drawing.Point(4, 39);
-            this.Sales.Name = "Sales";
-            this.Sales.Size = new System.Drawing.Size(1928, 911);
-            this.Sales.TabIndex = 8;
-            this.Sales.Text = "Sales";
-            this.Sales.UseVisualStyleBackColor = true;
-            // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
@@ -611,110 +788,6 @@
             this.imageList1.Images.SetKeyName(6, "icons8-stocks-32.png");
             this.imageList1.Images.SetKeyName(7, "icons8-total-sales-32.png");
             this.imageList1.Images.SetKeyName(8, "icons8-records-32 (1).png");
-            // 
-            // BudgetAssigntxtbox
-            // 
-            this.BudgetAssigntxtbox.AnimateReadOnly = false;
-            this.BudgetAssigntxtbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BudgetAssigntxtbox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.BudgetAssigntxtbox.Depth = 0;
-            this.BudgetAssigntxtbox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.BudgetAssigntxtbox.HideSelection = true;
-            this.BudgetAssigntxtbox.LeadingIcon = null;
-            this.BudgetAssigntxtbox.Location = new System.Drawing.Point(1511, 94);
-            this.BudgetAssigntxtbox.MaxLength = 32767;
-            this.BudgetAssigntxtbox.MouseState = MaterialSkin.MouseState.OUT;
-            this.BudgetAssigntxtbox.Name = "BudgetAssigntxtbox";
-            this.BudgetAssigntxtbox.PasswordChar = '\0';
-            this.BudgetAssigntxtbox.PrefixSuffixText = null;
-            this.BudgetAssigntxtbox.ReadOnly = false;
-            this.BudgetAssigntxtbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.BudgetAssigntxtbox.SelectedText = "";
-            this.BudgetAssigntxtbox.SelectionLength = 0;
-            this.BudgetAssigntxtbox.SelectionStart = 0;
-            this.BudgetAssigntxtbox.ShortcutsEnabled = true;
-            this.BudgetAssigntxtbox.Size = new System.Drawing.Size(345, 48);
-            this.BudgetAssigntxtbox.TabIndex = 1;
-            this.BudgetAssigntxtbox.TabStop = false;
-            this.BudgetAssigntxtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.BudgetAssigntxtbox.TrailingIcon = null;
-            this.BudgetAssigntxtbox.UseSystemPasswordChar = false;
-            // 
-            // budgetlal
-            // 
-            this.budgetlal.AutoSize = true;
-            this.budgetlal.Location = new System.Drawing.Point(1508, 62);
-            this.budgetlal.Name = "budgetlal";
-            this.budgetlal.Size = new System.Drawing.Size(73, 16);
-            this.budgetlal.TabIndex = 2;
-            this.budgetlal.Text = "Set Budget";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(431, 338);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 16);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Remaining ";
-            // 
-            // remindertxtbox
-            // 
-            this.remindertxtbox.AnimateReadOnly = false;
-            this.remindertxtbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.remindertxtbox.Depth = 0;
-            this.remindertxtbox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.remindertxtbox.LeadingIcon = null;
-            this.remindertxtbox.Location = new System.Drawing.Point(393, 384);
-            this.remindertxtbox.MaxLength = 50;
-            this.remindertxtbox.MouseState = MaterialSkin.MouseState.OUT;
-            this.remindertxtbox.Multiline = false;
-            this.remindertxtbox.Name = "remindertxtbox";
-            this.remindertxtbox.ReadOnly = true;
-            this.remindertxtbox.Size = new System.Drawing.Size(159, 50);
-            this.remindertxtbox.TabIndex = 4;
-            this.remindertxtbox.Text = "";
-            this.remindertxtbox.TrailingIcon = null;
-            // 
-            // SETbtn
-            // 
-            this.SETbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.SETbtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.SETbtn.Depth = 0;
-            this.SETbtn.HighEmphasis = true;
-            this.SETbtn.Icon = null;
-            this.SETbtn.Location = new System.Drawing.Point(1863, 106);
-            this.SETbtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.SETbtn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.SETbtn.Name = "SETbtn";
-            this.SETbtn.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.SETbtn.Size = new System.Drawing.Size(64, 36);
-            this.SETbtn.TabIndex = 5;
-            this.SETbtn.Text = "Set";
-            this.SETbtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.SETbtn.UseAccentColor = false;
-            this.SETbtn.UseVisualStyleBackColor = true;
-            this.SETbtn.Click += new System.EventHandler(this.SETbtn_Click);
-            // 
-            // Extendbtn
-            // 
-            this.Extendbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Extendbtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.Extendbtn.Depth = 0;
-            this.Extendbtn.HighEmphasis = true;
-            this.Extendbtn.Icon = null;
-            this.Extendbtn.Location = new System.Drawing.Point(1646, 151);
-            this.Extendbtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.Extendbtn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.Extendbtn.Name = "Extendbtn";
-            this.Extendbtn.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.Extendbtn.Size = new System.Drawing.Size(64, 36);
-            this.Extendbtn.TabIndex = 6;
-            this.Extendbtn.Text = "Extend";
-            this.Extendbtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.Extendbtn.UseAccentColor = false;
-            this.Extendbtn.UseVisualStyleBackColor = true;
-            this.Extendbtn.Click += new System.EventHandler(this.Extendbtn_Click);
             // 
             // CEO
             // 
@@ -753,7 +826,6 @@
         private System.Windows.Forms.TabPage Pricing;
         private System.Windows.Forms.TabPage StockLevels;
         private System.Windows.Forms.TabPage Report;
-        private System.Windows.Forms.TabPage Sales;
         private MaterialSkin.Controls.MaterialTextBox EmpSearchtxtbox;
         private System.Windows.Forms.Button EmpSearchbtn;
         private MaterialSkin.Controls.MaterialComboBox EmpRoleCombobox;
@@ -767,13 +839,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private MaterialSkin.Controls.MaterialComboBox EmpRolebox;
-        private MaterialSkin.Controls.MaterialMultiLineTextBox2 Addressmultilinebox;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox2 EmpAddresstxtbox;
         private System.Windows.Forms.Label Address;
         private System.Windows.Forms.Label ll;
-        private System.Windows.Forms.DateTimePicker Dobdate;
+        private System.Windows.Forms.DateTimePicker EmpDOBtxtbox;
         private MaterialSkin.Controls.MaterialButton Empsavebtn;
         private MaterialSkin.Controls.MaterialButton Empcancelbtn;
-        private System.Windows.Forms.DataGridView RecodsDataGridView;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private Bunifu.UI.WinForms.BunifuDataGridView EmployeeDataGridView;
         private System.Windows.Forms.Label budgetlal;
@@ -782,5 +853,7 @@
         private MaterialSkin.Controls.MaterialTextBox remindertxtbox;
         private MaterialSkin.Controls.MaterialButton SETbtn;
         private MaterialSkin.Controls.MaterialButton Extendbtn;
+        private MaterialSkin.Controls.MaterialComboBox Recordscombobox;
+        private Bunifu.UI.WinForms.BunifuDataGridView RecodsDataGridView;
     }
 }
