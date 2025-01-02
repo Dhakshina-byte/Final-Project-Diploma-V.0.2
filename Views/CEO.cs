@@ -1,22 +1,30 @@
-﻿using MaterialSkin;
+﻿using Finalproject.Controllers;
+using Finalproject.Models;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Finalproject.Views
 {
     public partial class CEO : MaterialForm
     {
+        private readonly SalesController salesController;
+        private SalesBudget salesBudget;
         public CEO()
         {
             InitializeComponent();
+            salesController = new SalesController();
+            salesBudget = new SalesBudget();
             InitializeMaterialSkin();
         }
         private void InitializeMaterialSkin()
@@ -31,10 +39,52 @@ namespace Finalproject.Views
 
         private void CEO_Load(object sender, EventArgs e)
         {
+            MonitorSalesBudget();
+        }
+        private void MonitorSalesBudget()
+        {
+            string connectionString = "Data Source=OM3GA;Initial Catalog=AutomobileSalesServiceDB;Integrated Security=True";
+            string query = "SELECT Expense_Description, Expense_Amount FROM Budget_Expenses";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                chart1.Series.Clear();
+                Series series = new Series("Budget");
+                series.ChartType = SeriesChartType.Doughnut;
+                chart1.Series.Add(series);
+
+                double totalAmount = 0;
+                Dictionary<string, double> expenses = new Dictionary<string, double>();
+
+                while (reader.Read())
+                {
+                    string description = reader["Expense_Description"].ToString();
+                    double amount = Convert.ToDouble(reader["Expense_Amount"]);
+                    expenses[description] = amount;
+                    totalAmount += amount;
+                }
+
+                foreach (var expense in expenses)
+                {
+                    double percentage = (expense.Value / totalAmount) * 100;
+                    series.Points.AddXY($"{expense.Key} ({percentage:F2}%)", expense.Value);
+                }
+
+                reader.Close();
+            }
+            salesBudget.reminder = salesController.ReminderMethod();
+            remindertxtbox.Text = salesBudget.reminder.ToString("C", new System.Globalization.CultureInfo("en-LK"));
+        }
+        
+        private void Employees_Click(object sender, EventArgs e)
+        {
 
         }
-
-        private void Employees_Click(object sender, EventArgs e)
+        private void SETbtn_Click(object sender, EventArgs e)
         {
 
         }

@@ -1,10 +1,10 @@
 ﻿-- SQL Script for Automobile Sales and Service Management System
 
 -- Create Database
-CREATE DATABASE AutomobileSalesServiceDB;
+CREATE DATABASE AutomobileSalesServiceDB
 
 -- Use Database
-USE AutomobileSalesServiceDB;
+USE AutomobileSalesServiceDB
 
 -- Roles Table
 CREATE TABLE Roles (
@@ -117,6 +117,26 @@ CREATE TABLE Payment (
     Pay_ID INT PRIMARY KEY IDENTITY(1,1),
     Paid_amount DECIMAL(10, 2),
     Payment_desc TEXT
+);
+
+
+-- Sales Budget Table
+CREATE TABLE Sales_Budget (
+    Budget_ID INT PRIMARY KEY IDENTITY(1,1),
+    Year INT NOT NULL DEFAULT YEAR(GETDATE()),
+    Budget_amount DECIMAL(10, 2) NOT NULL,
+    Department_ID INT,
+    FOREIGN KEY (Department_ID) REFERENCES Department(D_ID)
+);
+
+-- Budget Expenses Table
+CREATE TABLE Budget_Expenses (
+    Expense_ID INT PRIMARY KEY IDENTITY(1,1),
+    Expense_Description TEXT,
+    Expense_Amount DECIMAL(10, 2) NOT NULL,
+    Expense_Date DATE,
+    Budget_ID INT,
+    FOREIGN KEY (Budget_ID) REFERENCES Sales_Budget(Budget_ID)
 );
 
 -- Relationships and Foreign Keys
