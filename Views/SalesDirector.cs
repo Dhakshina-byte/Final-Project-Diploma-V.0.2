@@ -1,4 +1,5 @@
-﻿using MaterialSkin.Controls;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,22 +12,25 @@ using System.Windows.Forms;
 
 namespace Finalproject.Views
 {
-    public partial class Service : MaterialForm
+    public partial class SalesDirector : MaterialForm
     {
-        public Service()
+        public SalesDirector()
         {
             InitializeComponent();
-            Initializeskin();
+            InitializeMaterialSkin();
         }
-        public  void Initializeskin()
+        private void InitializeMaterialSkin()
         {
-            MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
-            skinManager.AddFormToManage(this);
-            skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
-            skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.BlueGrey800, MaterialSkin.Primary.BlueGrey900, MaterialSkin.Primary.BlueGrey500, MaterialSkin.Accent.LightBlue200, MaterialSkin.TextShade.WHITE);
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800,
+                Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200,
+                TextShade.WHITE);
         }
 
-        private void CEOForm_Load(object sender, EventArgs e)
+
+        private void SalesDirector_Load(object sender, EventArgs e)
         {
 
         }
