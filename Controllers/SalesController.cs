@@ -18,9 +18,9 @@ namespace Finalproject.Controllers
             dataAccess = new SalesService();
         }
 
-        public void AddSalesTarget(SalesBudget budget)
+        public void AddSalesTarget(Decimal BudgetAmount)
         {
-            dataAccess.SetSalesTarget(budget);
+            dataAccess.SetSalesTarget(BudgetAmount);
         }
 
         public void AddSalesQuota(BudgetExpense expense)
@@ -32,6 +32,16 @@ namespace Finalproject.Controllers
         {
             decimal remainingAmount = dataAccess.GetRemainingAmount();
             return (int)remainingAmount;
+        }
+        public int Getyear() 
+        {
+          int year =  dataAccess.GetCurrentYearFromSalesBudget();
+            return year;
+        }
+        public void UpdateBudgetAmount(int year, decimal BudgetAmount)
+        {
+            dataAccess.UpdateBudgetAmount(year, BudgetAmount);
+
         }
     }
 }

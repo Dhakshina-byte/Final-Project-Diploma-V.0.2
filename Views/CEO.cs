@@ -40,6 +40,7 @@ namespace Finalproject.Views
         private void CEO_Load(object sender, EventArgs e)
         {
             MonitorSalesBudget();
+            cheakyear();
         }
         private void MonitorSalesBudget()
         {
@@ -79,6 +80,20 @@ namespace Finalproject.Views
             salesBudget.reminder = salesController.ReminderMethod();
             remindertxtbox.Text = salesBudget.reminder.ToString("C", new System.Globalization.CultureInfo("en-LK"));
         }
+        private void cheakyear()
+        {
+            salesBudget.Year = salesController.Getyear();
+            if (salesBudget.Year != DateTime.Now.Year)
+            {
+                SETbtn.Visible = true;
+                Extendbtn.Visible = false;
+            }
+            else
+            {
+                SETbtn.Visible = false;
+                Extendbtn.Visible = true;
+            }
+        }
         
         private void Employees_Click(object sender, EventArgs e)
         {
@@ -86,7 +101,21 @@ namespace Finalproject.Views
         }
         private void SETbtn_Click(object sender, EventArgs e)
         {
+           Decimal BudgetAmount = Convert.ToDecimal(BudgetAssigntxtbox.Text);
+            salesController.AddSalesTarget(BudgetAmount);
+            cheakyear();
+        }
 
+        private void Extendbtn_Click(object sender, EventArgs e)
+        {
+            if (BudgetAssigntxtbox.Text != "")
+            {
+
+                Decimal BudgetAmount = Convert.ToDecimal(BudgetAssigntxtbox.Text);
+                int year = DateTime.Now.Year;
+                salesController.UpdateBudgetAmount(year, BudgetAmount);
+                MonitorSalesBudget();
+            }
         }
     }
 }

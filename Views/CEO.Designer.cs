@@ -74,6 +74,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.remindertxtbox = new MaterialSkin.Controls.MaterialTextBox();
             this.SETbtn = new MaterialSkin.Controls.MaterialButton();
+            this.Extendbtn = new MaterialSkin.Controls.MaterialButton();
             this.materialTabControl1.SuspendLayout();
             this.Employees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGridView)).BeginInit();
@@ -492,6 +493,7 @@
             // 
             // SalesBudget
             // 
+            this.SalesBudget.Controls.Add(this.Extendbtn);
             this.SalesBudget.Controls.Add(this.SETbtn);
             this.SalesBudget.Controls.Add(this.remindertxtbox);
             this.SalesBudget.Controls.Add(this.label6);
@@ -686,13 +688,33 @@
             this.SETbtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.SETbtn.Name = "SETbtn";
             this.SETbtn.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.SETbtn.Size = new System.Drawing.Size(158, 36);
+            this.SETbtn.Size = new System.Drawing.Size(64, 36);
             this.SETbtn.TabIndex = 5;
             this.SETbtn.Text = "Set";
             this.SETbtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.SETbtn.UseAccentColor = false;
             this.SETbtn.UseVisualStyleBackColor = true;
             this.SETbtn.Click += new System.EventHandler(this.SETbtn_Click);
+            // 
+            // Extendbtn
+            // 
+            this.Extendbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Extendbtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.Extendbtn.Depth = 0;
+            this.Extendbtn.HighEmphasis = true;
+            this.Extendbtn.Icon = null;
+            this.Extendbtn.Location = new System.Drawing.Point(1646, 151);
+            this.Extendbtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Extendbtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Extendbtn.Name = "Extendbtn";
+            this.Extendbtn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.Extendbtn.Size = new System.Drawing.Size(64, 36);
+            this.Extendbtn.TabIndex = 6;
+            this.Extendbtn.Text = "Extend";
+            this.Extendbtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.Extendbtn.UseAccentColor = false;
+            this.Extendbtn.UseVisualStyleBackColor = true;
+            this.Extendbtn.Click += new System.EventHandler(this.Extendbtn_Click);
             // 
             // CEO
             // 
@@ -759,5 +781,6 @@
         private System.Windows.Forms.Label label6;
         private MaterialSkin.Controls.MaterialTextBox remindertxtbox;
         private MaterialSkin.Controls.MaterialButton SETbtn;
+        private MaterialSkin.Controls.MaterialButton Extendbtn;
     }
 }
