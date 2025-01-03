@@ -26,6 +26,7 @@ namespace Finalproject.Services
             SqlCommand cmd = new SqlCommand(query, connection);
             {
                 cmd.Parameters.AddWithValue("@BudgetAmount",BudgetAmount);
+                connection.Close();
                 connection.Open();
                 cmd.ExecuteNonQuery();
             }
@@ -66,6 +67,7 @@ namespace Finalproject.Services
             string query = "SELECT Year FROM Sales_Budget WHERE Year = YEAR(GETDATE())";
             SqlCommand cmd = new SqlCommand(query, connection);
             int currentYear = 0;
+            connection.Close();
             connection.Open();
             using (SqlDataReader reader = cmd.ExecuteReader())
             {

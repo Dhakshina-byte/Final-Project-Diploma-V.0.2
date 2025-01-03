@@ -21,6 +21,7 @@ namespace Finalproject.Views
     {
         private readonly EmployeeController employeeController;
         private readonly SalesController salesController;
+        private NetProfitController controller;
         private Employee employee;
         private Department department;
         private Role role;
@@ -36,6 +37,8 @@ namespace Finalproject.Views
             role = new Role();
             login = new Login();
             salesBudget = new SalesBudget();
+            controller = new NetProfitController(this);
+            NetprofitChart();
             InitializeMaterialSkin();
         }
         private void InitializeMaterialSkin()
@@ -47,12 +50,37 @@ namespace Finalproject.Views
                 Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200,
                 TextShade.WHITE);
         }
+        private void NetprofitChart() 
+        {
+            netprofitchart.Series.Clear();
+            Series series = new Series("Net Profit")
+            {
+                ChartType = SeriesChartType.Line
+            };
+            netprofitchart.Series.Add(series);
+            netprofitchart.ChartAreas.Add(new ChartArea("MainArea"));
+        }
+        public void UpdateChart(NetProfitModel model)
+        {
+            netprofitchart.Series["Net Profit"].Points.AddXY(DateTime.Now.ToString("g"), model.NetProfit);
+        }
 
+        public void AddDataPointToChart(NetProfitModel model)
+        {
+            netprofitchart.Series["Net Profit"].Points.AddXY(model.CreatedAt.ToString("g"), model.NetProfit);
+        }
+        public void ShowProfit()
+        {
+            DataTable dt = controller.Getprofit();
+            NetProfittable.DataSource = dt;
+        }
         private void CEO_Load(object sender, EventArgs e)
         {
             showAllEmployees();
             MonitorSalesBudget();
             cheakyear();
+            ShowProfit();
+            controller.LoadHistoricalData();
         }
         private void showAllEmployees()
         {
@@ -75,6 +103,7 @@ namespace Finalproject.Views
                 Text = "Delete",
                 UseColumnTextForButtonValue = true
             };
+
             EmployeeDataGridView.Columns.Insert(9, deleteButton);
 
             // Add Edit button column
@@ -86,7 +115,9 @@ namespace Finalproject.Views
                 Text = "Edit",
                 UseColumnTextForButtonValue = true
             };
+
             EmployeeDataGridView.Columns.Insert(10, editButton);
+
         }
         private void MonitorSalesBudget()
         {
@@ -325,14 +356,21 @@ namespace Finalproject.Views
 
         private void EmpSearchbtn_Click(object sender, EventArgs e)
         {
+
             EmpSearchtxtbox.Text = EmpSearchtxtbox.Text;
-           var dt = employeeController.searchEmployee(EmpSearchtxtbox.Text);
+            var dt = employeeController.searchEmployee(EmpSearchtxtbox.Text);
             EmployeeDataGridView.DataSource = dt;
             if (EmployeeDataGridView.Columns["DeleteButton"] == null ||
                EmployeeDataGridView.Columns["EditButton"] == null)
             {
                 Datagridsetup();
             }
+
+        }
+
+        private void chart2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

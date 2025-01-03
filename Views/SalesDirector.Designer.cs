@@ -33,11 +33,6 @@
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.Home = new System.Windows.Forms.TabPage();
             this.Employees = new System.Windows.Forms.TabPage();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.Target = new System.Windows.Forms.TabPage();
-            this.Reports = new System.Windows.Forms.TabPage();
-            this.CustomerPurchase = new System.Windows.Forms.TabPage();
-            this.SalesBudget = new System.Windows.Forms.TabPage();
             this.Empsavebtn = new MaterialSkin.Controls.MaterialButton();
             this.Empcancelbtn = new MaterialSkin.Controls.MaterialButton();
             this.ll = new System.Windows.Forms.Label();
@@ -58,6 +53,11 @@
             this.EmpSearchtxtbox = new MaterialSkin.Controls.MaterialTextBox();
             this.EmployeeDataGridView = new System.Windows.Forms.DataGridView();
             this.EmpSearchbtn = new System.Windows.Forms.Button();
+            this.Target = new System.Windows.Forms.TabPage();
+            this.Reports = new System.Windows.Forms.TabPage();
+            this.CustomerPurchase = new System.Windows.Forms.TabPage();
+            this.SalesBudget = new System.Windows.Forms.TabPage();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.materialTabControl1.SuspendLayout();
             this.Employees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGridView)).BeginInit();
@@ -123,58 +123,7 @@
             this.Employees.TabIndex = 1;
             this.Employees.Text = "Employees";
             this.Employees.UseVisualStyleBackColor = true;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "icons8-reports-32.png");
-            this.imageList1.Images.SetKeyName(1, "icons8-budget-35.png");
-            this.imageList1.Images.SetKeyName(2, "icons8-home-32.png");
-            this.imageList1.Images.SetKeyName(3, "icons8-employee-32.png");
-            this.imageList1.Images.SetKeyName(4, "icons8-target-35.png");
-            this.imageList1.Images.SetKeyName(5, "icons8-activity-history-32.png");
-            this.imageList1.Images.SetKeyName(6, "icons8-reports-32.png");
-            // 
-            // Target
-            // 
-            this.Target.ImageKey = "icons8-target-35.png";
-            this.Target.Location = new System.Drawing.Point(4, 39);
-            this.Target.Name = "Target";
-            this.Target.Size = new System.Drawing.Size(1928, 911);
-            this.Target.TabIndex = 2;
-            this.Target.Text = "Target";
-            this.Target.UseVisualStyleBackColor = true;
-            // 
-            // Reports
-            // 
-            this.Reports.ImageKey = "icons8-reports-32.png";
-            this.Reports.Location = new System.Drawing.Point(4, 39);
-            this.Reports.Name = "Reports";
-            this.Reports.Size = new System.Drawing.Size(1928, 911);
-            this.Reports.TabIndex = 3;
-            this.Reports.Text = "Reports";
-            this.Reports.UseVisualStyleBackColor = true;
-            // 
-            // CustomerPurchase
-            // 
-            this.CustomerPurchase.ImageKey = "icons8-activity-history-32.png";
-            this.CustomerPurchase.Location = new System.Drawing.Point(4, 39);
-            this.CustomerPurchase.Name = "CustomerPurchase";
-            this.CustomerPurchase.Size = new System.Drawing.Size(1928, 911);
-            this.CustomerPurchase.TabIndex = 4;
-            this.CustomerPurchase.Text = "Customer Purchase History";
-            this.CustomerPurchase.UseVisualStyleBackColor = true;
-            // 
-            // SalesBudget
-            // 
-            this.SalesBudget.ImageKey = "icons8-budget-35.png";
-            this.SalesBudget.Location = new System.Drawing.Point(4, 39);
-            this.SalesBudget.Name = "SalesBudget";
-            this.SalesBudget.Size = new System.Drawing.Size(1928, 911);
-            this.SalesBudget.TabIndex = 5;
-            this.SalesBudget.Text = "Sales Budget";
-            this.SalesBudget.UseVisualStyleBackColor = true;
+            this.Employees.Click += new System.EventHandler(this.Employees_Click);
             // 
             // Empsavebtn
             // 
@@ -288,7 +237,6 @@
             this.EmpRolebox.IntegralHeight = false;
             this.EmpRolebox.ItemHeight = 43;
             this.EmpRolebox.Items.AddRange(new object[] {
-            "Sales Manager",
             "Sales General Manager"});
             this.EmpRolebox.Location = new System.Drawing.Point(1519, 350);
             this.EmpRolebox.MaxDropDownItems = 4;
@@ -303,7 +251,7 @@
             this.EmpCitytxtbox.AnimateReadOnly = false;
             this.EmpCitytxtbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EmpCitytxtbox.Depth = 0;
-            this.EmpCitytxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EmpCitytxtbox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.EmpCitytxtbox.LeadingIcon = null;
             this.EmpCitytxtbox.Location = new System.Drawing.Point(1519, 448);
             this.EmpCitytxtbox.MaxLength = 50;
@@ -338,7 +286,7 @@
             this.EmpMobiletxtbox.AnimateReadOnly = false;
             this.EmpMobiletxtbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EmpMobiletxtbox.Depth = 0;
-            this.EmpMobiletxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EmpMobiletxtbox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.EmpMobiletxtbox.LeadingIcon = null;
             this.EmpMobiletxtbox.Location = new System.Drawing.Point(1519, 250);
             this.EmpMobiletxtbox.MaxLength = 50;
@@ -364,7 +312,7 @@
             this.EmpEmailtxtbox.AnimateReadOnly = false;
             this.EmpEmailtxtbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EmpEmailtxtbox.Depth = 0;
-            this.EmpEmailtxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EmpEmailtxtbox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.EmpEmailtxtbox.LeadingIcon = null;
             this.EmpEmailtxtbox.Location = new System.Drawing.Point(1519, 150);
             this.EmpEmailtxtbox.MaxLength = 50;
@@ -390,7 +338,7 @@
             this.EmpNametxtbox.AnimateReadOnly = false;
             this.EmpNametxtbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EmpNametxtbox.Depth = 0;
-            this.EmpNametxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EmpNametxtbox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.EmpNametxtbox.LeadingIcon = null;
             this.EmpNametxtbox.Location = new System.Drawing.Point(1519, 53);
             this.EmpNametxtbox.MaxLength = 50;
@@ -432,7 +380,7 @@
             this.EmpSearchtxtbox.AnimateReadOnly = false;
             this.EmpSearchtxtbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EmpSearchtxtbox.Depth = 0;
-            this.EmpSearchtxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EmpSearchtxtbox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.EmpSearchtxtbox.LeadingIcon = null;
             this.EmpSearchtxtbox.Location = new System.Drawing.Point(786, 11);
             this.EmpSearchtxtbox.MaxLength = 50;
@@ -462,6 +410,58 @@
             this.EmpSearchbtn.Size = new System.Drawing.Size(60, 48);
             this.EmpSearchbtn.TabIndex = 22;
             this.EmpSearchbtn.UseVisualStyleBackColor = true;
+            // 
+            // Target
+            // 
+            this.Target.ImageKey = "icons8-target-35.png";
+            this.Target.Location = new System.Drawing.Point(4, 39);
+            this.Target.Name = "Target";
+            this.Target.Size = new System.Drawing.Size(1928, 911);
+            this.Target.TabIndex = 2;
+            this.Target.Text = "Target";
+            this.Target.UseVisualStyleBackColor = true;
+            // 
+            // Reports
+            // 
+            this.Reports.ImageKey = "icons8-reports-32.png";
+            this.Reports.Location = new System.Drawing.Point(4, 39);
+            this.Reports.Name = "Reports";
+            this.Reports.Size = new System.Drawing.Size(1928, 911);
+            this.Reports.TabIndex = 3;
+            this.Reports.Text = "Reports";
+            this.Reports.UseVisualStyleBackColor = true;
+            // 
+            // CustomerPurchase
+            // 
+            this.CustomerPurchase.ImageKey = "icons8-activity-history-32.png";
+            this.CustomerPurchase.Location = new System.Drawing.Point(4, 39);
+            this.CustomerPurchase.Name = "CustomerPurchase";
+            this.CustomerPurchase.Size = new System.Drawing.Size(1928, 911);
+            this.CustomerPurchase.TabIndex = 4;
+            this.CustomerPurchase.Text = "Customer Purchase History";
+            this.CustomerPurchase.UseVisualStyleBackColor = true;
+            // 
+            // SalesBudget
+            // 
+            this.SalesBudget.ImageKey = "icons8-budget-35.png";
+            this.SalesBudget.Location = new System.Drawing.Point(4, 39);
+            this.SalesBudget.Name = "SalesBudget";
+            this.SalesBudget.Size = new System.Drawing.Size(1928, 911);
+            this.SalesBudget.TabIndex = 5;
+            this.SalesBudget.Text = "Sales Budget";
+            this.SalesBudget.UseVisualStyleBackColor = true;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "icons8-reports-32.png");
+            this.imageList1.Images.SetKeyName(1, "icons8-budget-35.png");
+            this.imageList1.Images.SetKeyName(2, "icons8-home-32.png");
+            this.imageList1.Images.SetKeyName(3, "icons8-employee-32.png");
+            this.imageList1.Images.SetKeyName(4, "icons8-target-35.png");
+            this.imageList1.Images.SetKeyName(5, "icons8-activity-history-32.png");
+            this.imageList1.Images.SetKeyName(6, "icons8-reports-32.png");
             // 
             // SalesDirector
             // 

@@ -189,10 +189,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\NetProfitController.cs" />
     <Compile Include="Controllers\SalesController.cs" />
     <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\NetProfitModel.cs" />
     <Compile Include="Models\Sales.cs" />
     <Compile Include="Services\EmployeeService.cs" />
+    <Compile Include="Services\NetProfitService.cs" />
     <Compile Include="Services\SalesService.cs" />
     <Compile Include="Views\CEO.cs">
       <SubType>Form</SubType>
@@ -206,6 +209,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DatabaseConnection.cs" />
+    <Compile Include="Views\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\SalesDirector.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +234,9 @@
     </Compile>
     <EmbeddedResource Include="Views\CEO.resx">
       <DependentUpon>CEO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SalesDirector.resx">
       <DependentUpon>SalesDirector.cs</DependentUpon>

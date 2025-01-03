@@ -22,6 +22,7 @@ namespace Finalproject.Services
             connection = DatabaseConnection.GetConnection();
         }
 
+
         public int getthelastemp()
         {
             string query = "SELECT MAX(EID) FROM Employee";

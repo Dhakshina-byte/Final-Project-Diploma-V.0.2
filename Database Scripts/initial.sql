@@ -22,6 +22,7 @@ CREATE TABLE Department (
 -- Employee Table
 CREATE TABLE Employee (
     EID INT PRIMARY KEY IDENTITY(1,1),
+	EName VARCHAR(100) NOT NULL,
     Email VARCHAR(225) NOT NULL UNIQUE,
     Mobile VARCHAR(15) NOT NULL UNIQUE,
     City VARCHAR(225),
@@ -137,6 +138,22 @@ CREATE TABLE Budget_Expenses (
     Budget_ID INT,
     FOREIGN KEY (Budget_ID) REFERENCES Sales_Budget(Year)
 );
+-- Revenue Table
+CREATE TABLE Revenue (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    Amount DECIMAL(18, 2) NOT NULL,
+    Date DATETIME NOT NULL
+);
+
+-- Expenses Table
+
+CREATE TABLE Expenses (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    Amount DECIMAL(18, 2) NOT NULL,
+    Date DATETIME NOT NULL
+);
+
+
 
 -- Relationships and Foreign Keys
 -- Linking Vehicle with Owner
@@ -158,7 +175,6 @@ ALTER TABLE Sales ADD FOREIGN KEY (Cus_ID) REFERENCES Customers(Cus_ID);
 -- Linking Reports with Payments
 ALTER TABLE Reports ADD Pay_ID INT;
 ALTER TABLE Reports ADD FOREIGN KEY (Pay_ID) REFERENCES Payment(Pay_ID);
-
 
 
 -- Add additional relations as per specific requirements.
