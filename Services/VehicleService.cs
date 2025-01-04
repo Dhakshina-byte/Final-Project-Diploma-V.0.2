@@ -45,6 +45,24 @@ namespace Finalproject.Services
             int result = command.ExecuteNonQuery();
             
         }
+
+        public DataTable autosearchvehicle(string search) 
+        {
+            string query = "SELECT Vehicle_ID,Number_Plate FROM Vehicle WHERE Number_Plate LIKE @Number_Plate OR Vehicle_ID LIKE @Vehicle_ID";
+            SqlCommand command = new SqlCommand(query, _connection);
+            {
+                _connection.Close();
+                _connection.Open();
+                command.Parameters.AddWithValue("@Number_Plate", "%" + search + "%");
+                command.Parameters.AddWithValue("@Vehicle_ID", "%" + search + "%");
+                SqlDataAdapter da = new SqlDataAdapter(command);
+                DataTable dt = new DataTable();
+               da.Fill(dt);
+                _connection.Close();
+                return dt;
+            }
+
+        }
         public void InsertVehicle(Vehicles vehicle)
         {
                 string query = "INSERT INTO Vehicle (Vehicle_name, Vehicle_type, Chassis_no, Engine_no, Price, vehicle_color, vehicle_model, vehicle_image, Manufacture_date, Status, Owner_ID, Number_Plate) " +

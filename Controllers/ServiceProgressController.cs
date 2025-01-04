@@ -10,7 +10,11 @@ namespace Finalproject.Controllers
 {
     public class ServiceProgressController
     {
-        private ServiceProgressService serviceProgressService = new ServiceProgressService();
+        private readonly ServiceProgressService serviceProgressService;
+        public ServiceProgressController()
+        {
+            serviceProgressService = new ServiceProgressService();
+        }
 
         public void AddServiceProgress(ServiceProgress progress)
         {

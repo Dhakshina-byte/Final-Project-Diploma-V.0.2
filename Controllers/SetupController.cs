@@ -10,8 +10,12 @@ namespace Finalproject.Controllers
 {
     public class SetupController
     {
-        private SetupService setupSer = new SetupService();
+        private readonly SetupService setupSer;
 
+        public SetupController()
+        {
+            setupSer = new SetupService();
+        }
         public void AddSetup(Setup setup)
         {
             setupSer.InsertSetup(setup);

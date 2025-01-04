@@ -11,9 +11,14 @@ namespace Finalproject.Controllers
     public class RepairController
     {
         private readonly RepairService repairService;
-    
 
-    public void AddRepair(Repair repair)
+        public RepairController()
+        {
+            repairService = new RepairService();
+        }
+
+
+        public void AddRepair(Repair repair)
         {
             repairService.InsertRepair(repair);
         }

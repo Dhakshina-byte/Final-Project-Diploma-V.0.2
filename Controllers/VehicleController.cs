@@ -41,6 +41,11 @@ public class VehicleController
             vehicleService.UpdateVehicle(vehicle);
         }
 
+        public DataTable autosearchvehicle(string search)
+        {
+            return vehicleService.autosearchvehicle(search);
+        }
+
         public void RemoveVehicle(int vehicleId)
         {
             vehicleService.DeleteVehicle(vehicleId);

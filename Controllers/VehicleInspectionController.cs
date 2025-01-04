@@ -10,7 +10,12 @@ namespace Finalproject.Controllers
 {
     public class VehicleInspectionController
     {
-        private VehicleInspectionService vehicleInspection = new VehicleInspectionService();
+        private readonly VehicleInspectionService vehicleInspection;
+
+        public VehicleInspectionController()
+        {
+            vehicleInspection = new VehicleInspectionService();
+        }
 
         public void AddVehicleInspection(VehicleInspection inspection)
         {

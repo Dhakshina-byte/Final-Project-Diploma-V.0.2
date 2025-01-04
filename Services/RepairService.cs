@@ -18,16 +18,17 @@ namespace Finalproject.Services
         }
         public void InsertRepair(Repair repair)
         {
-           
-                string query = "INSERT INTO Repair (Vehicle_ID, Repair_Date, Repair_Description, Cost) " +
-                               "VALUES (@Vehicle_ID, @Repair_Date, @Repair_Description, @Cost)";
-                SqlCommand cmd = new SqlCommand(query, conn);
+
+            string query = "INSERT INTO Repair (Vehicle_ID, Repair_Date, Repair_Description, Status) " +
+                         "VALUES (@Vehicle_ID, @Repair_Date, @Repair_Description, @Status)";
+            SqlCommand cmd = new SqlCommand(query, conn);
             {
                 conn.Close();
                 cmd.Parameters.AddWithValue("@Vehicle_ID", repair.Vehicle_ID);
                 cmd.Parameters.AddWithValue("@Repair_Date", repair.Repair_Date);
                 cmd.Parameters.AddWithValue("@Repair_Description", repair.Repair_Description);
-                cmd.Parameters.AddWithValue("@Cost", repair.Cost);
+                cmd.Parameters.AddWithValue("@Status", repair.Status);
+
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
@@ -36,16 +37,19 @@ namespace Finalproject.Services
 
         public void UpdateRepair(Repair repair)
         {
-                string query = "UPDATE Repair SET Vehicle_ID = @Vehicle_ID, Repair_Date = @Repair_Date, " +
-                               "Repair_Description = @Repair_Description, Cost = @Cost WHERE Repair_ID = @Repair_ID";
-                SqlCommand cmd = new SqlCommand(query, conn);
+            string query = "UPDATE Repair SET Vehicle_ID = @Vehicle_ID, Repair_Date = @Repair_Date, " +
+                      "Repair_Description = @Repair_Description, Status = @Status " +
+                      "WHERE Repair_ID = @Repair_ID";
+
+            SqlCommand cmd = new SqlCommand(query, conn);
             {
                 conn.Close();
                 cmd.Parameters.AddWithValue("@Repair_ID", repair.Repair_ID);
                 cmd.Parameters.AddWithValue("@Vehicle_ID", repair.Vehicle_ID);
                 cmd.Parameters.AddWithValue("@Repair_Date", repair.Repair_Date);
                 cmd.Parameters.AddWithValue("@Repair_Description", repair.Repair_Description);
-                cmd.Parameters.AddWithValue("@Cost", repair.Cost);
+                cmd.Parameters.AddWithValue("@Status", repair.Status);
+
 
                 conn.Open();
                 cmd.ExecuteNonQuery();

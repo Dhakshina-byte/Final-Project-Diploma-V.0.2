@@ -72,6 +72,9 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
       <HintPath>..\..\..\OneDrive\Documents\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
+      <HintPath>..\..\..\OneDrive\Documents\BunifuCrack-main\BunifuCrack-main\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialSkin, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\MaterialSkin.2.2.3.1\lib\net461\MaterialSkin.dll</HintPath>
     </Reference>
@@ -198,6 +201,7 @@
     <Compile Include="Controllers\SetupController.cs" />
     <Compile Include="Controllers\VehicleController.cs" />
     <Compile Include="Controllers\VehicleInspectionController.cs" />
+    <Compile Include="Controllers\washControllers.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\NetProfitModel.cs" />
     <Compile Include="Models\Sales.cs" />
@@ -213,6 +217,7 @@
     <Compile Include="Services\SetupService.cs" />
     <Compile Include="Services\VehicleInspectionService.cs" />
     <Compile Include="Services\VehicleService.cs" />
+    <Compile Include="Services\WashService.cs" />
     <Compile Include="Views\Accountant .cs">
       <SubType>Form</SubType>
     </Compile>
