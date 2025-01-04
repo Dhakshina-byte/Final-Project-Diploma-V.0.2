@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesDirector));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.Home = new System.Windows.Forms.TabPage();
             this.Employees = new System.Windows.Forms.TabPage();
@@ -56,11 +59,21 @@
             this.Target = new System.Windows.Forms.TabPage();
             this.Reports = new System.Windows.Forms.TabPage();
             this.CustomerPurchase = new System.Windows.Forms.TabPage();
-            this.SalesBudget = new System.Windows.Forms.TabPage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.CustomerPurchaseHistoryGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.ActualSalestxtbox = new MaterialSkin.Controls.MaterialTextBox();
+            this.SalesTargettxtbox = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.Calculatebtn = new MaterialSkin.Controls.MaterialButton();
+            this.Savebin = new MaterialSkin.Controls.MaterialButton();
+            this.lblResult = new MaterialSkin.Controls.MaterialLabel();
             this.materialTabControl1.SuspendLayout();
             this.Employees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGridView)).BeginInit();
+            this.Target.SuspendLayout();
+            this.CustomerPurchase.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerPurchaseHistoryGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -70,7 +83,6 @@
             this.materialTabControl1.Controls.Add(this.Target);
             this.materialTabControl1.Controls.Add(this.Reports);
             this.materialTabControl1.Controls.Add(this.CustomerPurchase);
-            this.materialTabControl1.Controls.Add(this.SalesBudget);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialTabControl1.ImageList = this.imageList1;
@@ -413,6 +425,13 @@
             // 
             // Target
             // 
+            this.Target.Controls.Add(this.lblResult);
+            this.Target.Controls.Add(this.Savebin);
+            this.Target.Controls.Add(this.Calculatebtn);
+            this.Target.Controls.Add(this.materialLabel2);
+            this.Target.Controls.Add(this.materialLabel1);
+            this.Target.Controls.Add(this.SalesTargettxtbox);
+            this.Target.Controls.Add(this.ActualSalestxtbox);
             this.Target.ImageKey = "icons8-target-35.png";
             this.Target.Location = new System.Drawing.Point(4, 39);
             this.Target.Name = "Target";
@@ -433,6 +452,7 @@
             // 
             // CustomerPurchase
             // 
+            this.CustomerPurchase.Controls.Add(this.CustomerPurchaseHistoryGrid);
             this.CustomerPurchase.ImageKey = "icons8-activity-history-32.png";
             this.CustomerPurchase.Location = new System.Drawing.Point(4, 39);
             this.CustomerPurchase.Name = "CustomerPurchase";
@@ -440,16 +460,6 @@
             this.CustomerPurchase.TabIndex = 4;
             this.CustomerPurchase.Text = "Customer Purchase History";
             this.CustomerPurchase.UseVisualStyleBackColor = true;
-            // 
-            // SalesBudget
-            // 
-            this.SalesBudget.ImageKey = "icons8-budget-35.png";
-            this.SalesBudget.Location = new System.Drawing.Point(4, 39);
-            this.SalesBudget.Name = "SalesBudget";
-            this.SalesBudget.Size = new System.Drawing.Size(1928, 911);
-            this.SalesBudget.TabIndex = 5;
-            this.SalesBudget.Text = "Sales Budget";
-            this.SalesBudget.UseVisualStyleBackColor = true;
             // 
             // imageList1
             // 
@@ -463,18 +473,197 @@
             this.imageList1.Images.SetKeyName(5, "icons8-activity-history-32.png");
             this.imageList1.Images.SetKeyName(6, "icons8-reports-32.png");
             // 
+            // CustomerPurchaseHistoryGrid
+            // 
+            this.CustomerPurchaseHistoryGrid.AllowCustomTheming = false;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.CustomerPurchaseHistoryGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.CustomerPurchaseHistoryGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.CustomerPurchaseHistoryGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CustomerPurchaseHistoryGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.CustomerPurchaseHistoryGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CustomerPurchaseHistoryGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.CustomerPurchaseHistoryGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CustomerPurchaseHistoryGrid.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.CustomerPurchaseHistoryGrid.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.CustomerPurchaseHistoryGrid.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.CustomerPurchaseHistoryGrid.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.CustomerPurchaseHistoryGrid.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.CustomerPurchaseHistoryGrid.CurrentTheme.BackColor = System.Drawing.Color.White;
+            this.CustomerPurchaseHistoryGrid.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.CustomerPurchaseHistoryGrid.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.CustomerPurchaseHistoryGrid.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.CustomerPurchaseHistoryGrid.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.CustomerPurchaseHistoryGrid.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            this.CustomerPurchaseHistoryGrid.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.CustomerPurchaseHistoryGrid.CurrentTheme.Name = null;
+            this.CustomerPurchaseHistoryGrid.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.CustomerPurchaseHistoryGrid.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.CustomerPurchaseHistoryGrid.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.CustomerPurchaseHistoryGrid.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.CustomerPurchaseHistoryGrid.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.CustomerPurchaseHistoryGrid.DefaultCellStyle = dataGridViewCellStyle12;
+            this.CustomerPurchaseHistoryGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CustomerPurchaseHistoryGrid.EnableHeadersVisualStyles = false;
+            this.CustomerPurchaseHistoryGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.CustomerPurchaseHistoryGrid.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.CustomerPurchaseHistoryGrid.HeaderBgColor = System.Drawing.Color.Empty;
+            this.CustomerPurchaseHistoryGrid.HeaderForeColor = System.Drawing.Color.White;
+            this.CustomerPurchaseHistoryGrid.Location = new System.Drawing.Point(0, 0);
+            this.CustomerPurchaseHistoryGrid.Name = "CustomerPurchaseHistoryGrid";
+            this.CustomerPurchaseHistoryGrid.RowHeadersVisible = false;
+            this.CustomerPurchaseHistoryGrid.RowHeadersWidth = 51;
+            this.CustomerPurchaseHistoryGrid.RowTemplate.Height = 40;
+            this.CustomerPurchaseHistoryGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.CustomerPurchaseHistoryGrid.Size = new System.Drawing.Size(1928, 911);
+            this.CustomerPurchaseHistoryGrid.TabIndex = 0;
+            this.CustomerPurchaseHistoryGrid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            // 
+            // ActualSalestxtbox
+            // 
+            this.ActualSalestxtbox.AnimateReadOnly = false;
+            this.ActualSalestxtbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ActualSalestxtbox.Depth = 0;
+            this.ActualSalestxtbox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ActualSalestxtbox.LeadingIcon = null;
+            this.ActualSalestxtbox.Location = new System.Drawing.Point(1575, 192);
+            this.ActualSalestxtbox.MaxLength = 50;
+            this.ActualSalestxtbox.MouseState = MaterialSkin.MouseState.OUT;
+            this.ActualSalestxtbox.Multiline = false;
+            this.ActualSalestxtbox.Name = "ActualSalestxtbox";
+            this.ActualSalestxtbox.Size = new System.Drawing.Size(326, 50);
+            this.ActualSalestxtbox.TabIndex = 0;
+            this.ActualSalestxtbox.Text = "";
+            this.ActualSalestxtbox.TrailingIcon = null;
+            // 
+            // SalesTargettxtbox
+            // 
+            this.SalesTargettxtbox.AnimateReadOnly = false;
+            this.SalesTargettxtbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SalesTargettxtbox.Depth = 0;
+            this.SalesTargettxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.SalesTargettxtbox.LeadingIcon = null;
+            this.SalesTargettxtbox.Location = new System.Drawing.Point(1575, 305);
+            this.SalesTargettxtbox.MaxLength = 50;
+            this.SalesTargettxtbox.MouseState = MaterialSkin.MouseState.OUT;
+            this.SalesTargettxtbox.Multiline = false;
+            this.SalesTargettxtbox.Name = "SalesTargettxtbox";
+            this.SalesTargettxtbox.Size = new System.Drawing.Size(326, 50);
+            this.SalesTargettxtbox.TabIndex = 1;
+            this.SalesTargettxtbox.Text = "";
+            this.SalesTargettxtbox.TrailingIcon = null;
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Location = new System.Drawing.Point(1384, 209);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(89, 19);
+            this.materialLabel1.TabIndex = 2;
+            this.materialLabel1.Text = "Actual Sales";
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel2.Location = new System.Drawing.Point(1383, 322);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(90, 19);
+            this.materialLabel2.TabIndex = 3;
+            this.materialLabel2.Text = "Sales Target";
+            // 
+            // Calculatebtn
+            // 
+            this.Calculatebtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Calculatebtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.Calculatebtn.Depth = 0;
+            this.Calculatebtn.HighEmphasis = true;
+            this.Calculatebtn.Icon = null;
+            this.Calculatebtn.Location = new System.Drawing.Point(1665, 404);
+            this.Calculatebtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Calculatebtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Calculatebtn.Name = "Calculatebtn";
+            this.Calculatebtn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.Calculatebtn.Size = new System.Drawing.Size(103, 36);
+            this.Calculatebtn.TabIndex = 4;
+            this.Calculatebtn.Text = "Calculate";
+            this.Calculatebtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.Calculatebtn.UseAccentColor = false;
+            this.Calculatebtn.UseVisualStyleBackColor = true;
+            this.Calculatebtn.Click += new System.EventHandler(this.Calculatebtn_Click);
+            // 
+            // Savebin
+            // 
+            this.Savebin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Savebin.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.Savebin.Depth = 0;
+            this.Savebin.HighEmphasis = true;
+            this.Savebin.Icon = null;
+            this.Savebin.Location = new System.Drawing.Point(1686, 744);
+            this.Savebin.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Savebin.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Savebin.Name = "Savebin";
+            this.Savebin.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.Savebin.Size = new System.Drawing.Size(64, 36);
+            this.Savebin.TabIndex = 7;
+            this.Savebin.Text = "Save";
+            this.Savebin.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.Savebin.UseAccentColor = false;
+            this.Savebin.UseVisualStyleBackColor = true;
+            this.Savebin.Click += new System.EventHandler(this.Savebin_Click);
+            // 
+            // lblResult
+            // 
+            this.lblResult.AutoSize = true;
+            this.lblResult.Depth = 0;
+            this.lblResult.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblResult.Location = new System.Drawing.Point(1594, 592);
+            this.lblResult.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(283, 19);
+            this.lblResult.TabIndex = 8;
+            this.lblResult.Text = "please press Calculate to dispaly results";
+            // 
             // SalesDirector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1942, 1021);
             this.Controls.Add(this.materialTabControl1);
+            this.DrawerIsOpen = true;
+            this.DrawerShowIconsWhenHidden = true;
+            this.DrawerTabControl = this.materialTabControl1;
             this.Name = "SalesDirector";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.SalesDirector_Load);
             this.materialTabControl1.ResumeLayout(false);
             this.Employees.ResumeLayout(false);
             this.Employees.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGridView)).EndInit();
+            this.Target.ResumeLayout(false);
+            this.Target.PerformLayout();
+            this.CustomerPurchase.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerPurchaseHistoryGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -488,7 +677,6 @@
         private System.Windows.Forms.TabPage Target;
         private System.Windows.Forms.TabPage Reports;
         private System.Windows.Forms.TabPage CustomerPurchase;
-        private System.Windows.Forms.TabPage SalesBudget;
         private MaterialSkin.Controls.MaterialButton Empsavebtn;
         private MaterialSkin.Controls.MaterialButton Empcancelbtn;
         private System.Windows.Forms.Label ll;
@@ -509,5 +697,13 @@
         private MaterialSkin.Controls.MaterialTextBox EmpSearchtxtbox;
         private System.Windows.Forms.DataGridView EmployeeDataGridView;
         private System.Windows.Forms.Button EmpSearchbtn;
+        private Bunifu.UI.WinForms.BunifuDataGridView CustomerPurchaseHistoryGrid;
+        private MaterialSkin.Controls.MaterialButton Calculatebtn;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialTextBox SalesTargettxtbox;
+        private MaterialSkin.Controls.MaterialTextBox ActualSalestxtbox;
+        private MaterialSkin.Controls.MaterialButton Savebin;
+        private MaterialSkin.Controls.MaterialLabel lblResult;
     }
 }

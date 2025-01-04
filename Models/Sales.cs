@@ -13,7 +13,7 @@ namespace Finalproject.Models
         public decimal BudgetAmount { get; set; }
         public int DepartmentID { get; set; }
         public int reminder { get; set; }
-}
+     }
 
  
     public class BudgetExpense
@@ -22,6 +22,14 @@ namespace Finalproject.Models
         public string ExpenseDescription { get; set; }
         public decimal ExpenseAmount { get; set; }
         public DateTime ExpenseDate { get; set; }
+    }
+
+    public class SalesTarget
+    {
+        public int Id { get; set; }
+        public decimal ActualSales { get; set; }
+        public decimal salesTarget { get; set; }
+        public decimal TargetPercentage { get; set; }
     }
 
 }

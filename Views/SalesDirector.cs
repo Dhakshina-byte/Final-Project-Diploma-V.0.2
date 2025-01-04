@@ -1,4 +1,6 @@
-﻿using MaterialSkin;
+﻿using Finalproject.Controllers;
+using Finalproject.Models;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -14,9 +16,12 @@ namespace Finalproject.Views
 {
     public partial class SalesDirector : MaterialForm
     {
+        private readonly SalesController controller;
+        private SalesTarget salesTarget;
         public SalesDirector()
         {
             InitializeComponent();
+            controller = new SalesController();
             InitializeMaterialSkin();
         }
         private void InitializeMaterialSkin()
@@ -37,7 +42,57 @@ namespace Finalproject.Views
 
         private void Employees_Click(object sender, EventArgs e)
         {
+           
+        }
 
+        private void Calculatebtn_Click(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(ActualSalestxtbox.Text, out decimal actualSales) &&
+               decimal.TryParse(SalesTargettxtbox.Text, out decimal salesTarget))
+            {
+                try
+                {
+                    decimal targetPercentage = controller.CalculateTargetPercentage(actualSales, salesTarget);
+                    lblResult.Text = $"Target Percentage: {targetPercentage:F2}%";
+                }
+                catch (ArgumentException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter valid numbers for Actual Sales and Sales Target.");
+            }
+        }
+
+        private void Savebin_Click(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(ActualSalestxtbox.Text, out decimal actualSales) &&
+                decimal.TryParse(SalesTargettxtbox.Text, out decimal salesTarget))
+            {
+                try
+                {
+                    decimal targetPercentage = controller.CalculateTargetPercentage(actualSales, salesTarget);
+                    SalesTarget salesTargetModel = new SalesTarget
+                    {
+                        ActualSales = actualSales,
+                        salesTarget = salesTarget,
+                        TargetPercentage = targetPercentage
+                    };
+
+                    controller.SaveSalesTarget(salesTargetModel);
+                    MessageBox.Show("Data saved successfully.");
+                }
+                catch (ArgumentException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter valid numbers for Actual Sales and Sales Target.");
+            }
         }
     }
 }

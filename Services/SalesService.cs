@@ -82,6 +82,8 @@ namespace Finalproject.Services
 
         public void UpdateBudgetAmount(int year, decimal BudgetAmount)
         {
+            connection.Close();
+            connection.Open();
             string query = "UPDATE Sales_Budget SET Budget_amount = @NewBudgetAmount WHERE Year = @Year";
             SqlCommand cmd = new SqlCommand(query, connection);
             cmd.Parameters.AddWithValue("@NewBudgetAmount", BudgetAmount);
@@ -91,6 +93,22 @@ namespace Finalproject.Services
             connection.Close();
         }
 
+
+        public void SaveSalesTarget(SalesTarget salesTarget)
+        {
+            {
+                string query = "INSERT INTO SalesTargets (ActualSales, SalesTarget, TargetPercentage) VALUES (@ActualSales, @SalesTarget, @TargetPercentage)";
+                SqlCommand command = new SqlCommand(query, connection);
+                connection.Close();
+                connection.Open();
+                command.Parameters.AddWithValue("@ActualSales", salesTarget.ActualSales);
+                command.Parameters.AddWithValue("@SalesTarget", salesTarget.salesTarget);
+                command.Parameters.AddWithValue("@TargetPercentage", salesTarget.TargetPercentage);
+
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
     }
 }
 

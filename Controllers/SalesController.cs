@@ -43,6 +43,21 @@ namespace Finalproject.Controllers
             dataAccess.UpdateBudgetAmount(year, BudgetAmount);
 
         }
+ 
+
+            public decimal CalculateTargetPercentage(decimal actualSales, decimal salesTarget)
+            {
+                if (salesTarget > 0)
+                {
+                    return (actualSales / salesTarget) * 100;
+                }
+                throw new ArgumentException("Sales Target must be greater than zero.");
+            }
+
+            public void SaveSalesTarget(SalesTarget salesTarget)
+        {
+            dataAccess.SaveSalesTarget(salesTarget);
+        }
     }
 }
 
