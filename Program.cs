@@ -17,7 +17,7 @@ namespace Finalproject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SalesDirector());
+            Application.Run(new Inventory_Manager());
         }
     }
 }

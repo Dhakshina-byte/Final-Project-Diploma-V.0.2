@@ -200,6 +200,12 @@
     <Compile Include="Services\NetProfitService.cs" />
     <Compile Include="Services\SalesService.cs" />
     <Compile Include="Services\VehicleService.cs" />
+    <Compile Include="Views\Accountant .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Accountant .Designer.cs">
+      <DependentUpon>Accountant .cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\CEO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,11 +218,29 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DatabaseConnection.cs" />
+    <Compile Include="Views\Inventory Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Inventory Manager.Designer.cs">
+      <DependentUpon>Inventory Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SalesGeneralView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SalesGeneralView.Designer.cs">
+      <DependentUpon>SalesGeneralView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\SalesDirector.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\SalesDirector.Designer.cs">
       <DependentUpon>SalesDirector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ServiceHead.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ServiceHead.Designer.cs">
+      <DependentUpon>ServiceHead.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\VehicleDisplay.cs">
       <SubType>UserControl</SubType>
@@ -235,11 +259,23 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\Accountant .resx">
+      <DependentUpon>Accountant .cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\CEO.resx">
       <DependentUpon>CEO.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Inventory Manager.resx">
+      <DependentUpon>Inventory Manager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\SalesDirector.resx">
       <DependentUpon>SalesDirector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SalesGeneralView.resx">
+      <DependentUpon>SalesGeneralView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ServiceHead.resx">
+      <DependentUpon>ServiceHead.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\VehicleDisplay.resx">
       <DependentUpon>VehicleDisplay.cs</DependentUpon>

@@ -20,32 +20,45 @@ namespace Finalproject.Views
 {
     public partial class CEO : MaterialForm
     {
+        // Controllers for handling various operations
         private readonly EmployeeController employeeController;
         private readonly VehicleController vehicleController;
         private readonly SalesController salesController;
         private NetProfitController controller;
+
+        // Models for different entities
         private Vehicles vehicles;
         private Employee employee;
         private Department department;
         private Role role;
         private Login login;
         private SalesBudget salesBudget;
+
         public CEO()
         {
             InitializeComponent();
+            // Initialize controllers
             employeeController = new EmployeeController();
             salesController = new SalesController();
             vehicleController = new VehicleController();
+
+            // Initialize models
             employee = new Employee();
             department = new Department();
             vehicles = new Vehicles();
             role = new Role();
             login = new Login();
             salesBudget = new SalesBudget();
+
+            // Initialize NetProfitController
             controller = new NetProfitController(this);
+
+            // Initialize chart and material skin
             NetprofitChart();
             InitializeMaterialSkin();
         }
+
+        // Method to initialize MaterialSkin
         private void InitializeMaterialSkin()
         {
             var materialSkinManager = MaterialSkinManager.Instance;
@@ -55,7 +68,9 @@ namespace Finalproject.Views
                 Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200,
                 TextShade.WHITE);
         }
-        private void NetprofitChart() 
+
+        // Method to initialize Net Profit chart
+        private void NetprofitChart()
         {
             netprofitchart.Series.Clear();
             Series series = new Series("Net Profit")
@@ -65,20 +80,27 @@ namespace Finalproject.Views
             netprofitchart.Series.Add(series);
             netprofitchart.ChartAreas.Add(new ChartArea("MainArea"));
         }
+
+        // Method to update the chart with new data
         public void UpdateChart(NetProfitModel model)
         {
             netprofitchart.Series["Net Profit"].Points.AddXY(DateTime.Now.ToString("g"), model.NetProfit);
         }
 
+        // Method to add a data point to the chart
         public void AddDataPointToChart(NetProfitModel model)
         {
             netprofitchart.Series["Net Profit"].Points.AddXY(model.CreatedAt.ToString("g"), model.NetProfit);
         }
+
+        // Method to show profit data in a table
         public void ShowProfit()
         {
             DataTable dt = controller.Getprofit();
             NetProfittable.DataSource = dt;
         }
+
+        // Event handler for form load
         private void CEO_Load(object sender, EventArgs e)
         {
             showAllEmployees();
@@ -88,18 +110,24 @@ namespace Finalproject.Views
             GenrateDyanmicVehicleDisplay();
             controller.LoadHistoricalData();
         }
+
+        // Method to show all employees in a data grid
         private void showAllEmployees()
         {
             DataTable dt = employeeController.getEmployee();
             EmployeeDataGridView.DataSource = dt;
             Datagridsetup();
         }
-        private void Datagridsetup() 
+
+        // Method to setup the data grid
+        private void Datagridsetup()
         {
             EmployeeDataGridView.AllowUserToAddRows = false;
             Addbuttons();
         }
-        private void Addbuttons() 
+
+        // Method to add buttons to the data grid
+        private void Addbuttons()
         {
             var deleteButton = new DataGridViewButtonColumn
             {
@@ -112,7 +140,6 @@ namespace Finalproject.Views
 
             EmployeeDataGridView.Columns.Insert(9, deleteButton);
 
-            // Add Edit button column
             var editButton = new DataGridViewButtonColumn
             {
                 Name = "EditButton",
@@ -123,8 +150,9 @@ namespace Finalproject.Views
             };
 
             EmployeeDataGridView.Columns.Insert(10, editButton);
-
         }
+
+        // Method to monitor sales budget and update the chart
         private void MonitorSalesBudget()
         {
             string connectionString = "Data Source=OM3GA;Initial Catalog=AutomobileSalesServiceDB;Integrated Security=True";
@@ -163,6 +191,8 @@ namespace Finalproject.Views
             salesBudget.reminder = salesController.ReminderMethod();
             remindertxtbox.Text = salesBudget.reminder.ToString("C", new System.Globalization.CultureInfo("en-LK"));
         }
+
+        // Method to check the year and update button visibility
         private void cheakyear()
         {
             salesBudget.Year = salesController.Getyear();
@@ -177,23 +207,26 @@ namespace Finalproject.Views
                 Extendbtn.Visible = true;
             }
         }
-        
+
+        // Event handler for Employees button click
         private void Employees_Click(object sender, EventArgs e)
         {
 
         }
+
+        // Event handler for SET button click
         private void SETbtn_Click(object sender, EventArgs e)
         {
-           Decimal BudgetAmount = Convert.ToDecimal(BudgetAssigntxtbox.Text);
+            Decimal BudgetAmount = Convert.ToDecimal(BudgetAssigntxtbox.Text);
             salesController.AddSalesTarget(BudgetAmount);
             cheakyear();
         }
 
+        // Event handler for Extend button click
         private void Extendbtn_Click(object sender, EventArgs e)
         {
             if (BudgetAssigntxtbox.Text != "")
             {
-
                 Decimal BudgetAmount = Convert.ToDecimal(BudgetAssigntxtbox.Text);
                 int year = DateTime.Now.Year;
                 salesController.UpdateBudgetAmount(year, BudgetAmount);
@@ -201,6 +234,7 @@ namespace Finalproject.Views
             }
         }
 
+        // Event handler for role combobox selection change
         private void EmpRoleCombobox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Console.WriteLine(EmpRoleCombobox.SelectedItem.ToString());
@@ -213,7 +247,6 @@ namespace Finalproject.Views
                    EmployeeDataGridView.Columns["EditButton"] == null)
                 {
                     Datagridsetup();
-
                 }
             }
             else if (EmpRoleCombobox.SelectedItem.ToString() == "Sales Director")
@@ -261,6 +294,7 @@ namespace Finalproject.Views
             }
         }
 
+        // Event handler for save button click
         private void Empsavebtn_Click(object sender, EventArgs e)
         {
             employee.Name = EmpNametxtbox.Text;
@@ -273,7 +307,7 @@ namespace Finalproject.Views
             employee.Password = "root";
             int lastnum = employeeController.getthelastemp();
             lastnum++;
-             login.EID= lastnum;
+            login.EID = lastnum;
             Console.WriteLine(login.EID);
 
             if (EmpRolebox.SelectedItem.ToString() == "Accountant")
@@ -283,7 +317,7 @@ namespace Finalproject.Views
             }
             else if (EmpRolebox.SelectedItem.ToString() == "Sales Director")
             {
-                role.Role_ID = 3 ;
+                role.Role_ID = 3;
                 department.D_ID = 1;
             }
             else if (EmpRolebox.SelectedItem.ToString() == "Inventory Manager")
@@ -315,6 +349,7 @@ namespace Finalproject.Views
             }
         }
 
+        // Event handler for data grid cell content click
         private void EmployeeDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == EmployeeDataGridView.Columns["DeleteButton"].Index)
@@ -333,16 +368,16 @@ namespace Finalproject.Views
             }
             else if (e.ColumnIndex == EmployeeDataGridView.Columns["EditButton"].Index)
             {
-               DataGridViewRow rows1 = EmployeeDataGridView.Rows[e.RowIndex];
-               if (MessageBox.Show(string.Format("Are you sure you want to Edit this row?", rows1.Cells["EID"].Value), "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
-               {
+                DataGridViewRow rows1 = EmployeeDataGridView.Rows[e.RowIndex];
+                if (MessageBox.Show(string.Format("Are you sure you want to Edit this row?", rows1.Cells["EID"].Value), "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
                     int EID = Convert.ToInt32(EmployeeDataGridView.Rows[e.RowIndex].Cells["EID"].Value);
                     employee.Name = rows1.Cells["EName"].Value.ToString();
                     employee.Email = rows1.Cells["Email"].Value.ToString();
-                    employee.Mobile=rows1.Cells["Mobile"].Value.ToString();
+                    employee.Mobile = rows1.Cells["Mobile"].Value.ToString();
                     employee.City = rows1.Cells["City"].Value.ToString();
                     employee.Address = rows1.Cells["Address"].Value.ToString();
-                    employeeController.UpdateEmployee(employee,EID);
+                    employeeController.UpdateEmployee(employee, EID);
                 }
                 DataTable dt = employeeController.getEmployee();
                 EmployeeDataGridView.DataSource = dt;
@@ -355,14 +390,15 @@ namespace Finalproject.Views
             }
         }
 
+        // Event handler for search text box text change
         private void EmpSearchtxtbox_TextChanged(object sender, EventArgs e)
         {
 
         }
 
+        // Event handler for search button click
         private void EmpSearchbtn_Click(object sender, EventArgs e)
         {
-
             EmpSearchtxtbox.Text = EmpSearchtxtbox.Text;
             var dt = employeeController.searchEmployee(EmpSearchtxtbox.Text);
             EmployeeDataGridView.DataSource = dt;
@@ -371,23 +407,20 @@ namespace Finalproject.Views
             {
                 Datagridsetup();
             }
-
         }
 
+        // Event handler for chart click
         private void chart2_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        private void GenrateDyanmicVehicleDisplay() 
+        // Method to generate dynamic vehicle display
+        private void GenrateDyanmicVehicleDisplay()
         {
             flowLayoutPanel1.Controls.Clear();
             DataTable dt = vehicleController.GetVehicles();
-            if(dt != null) 
+            if (dt != null)
             {
                 if (dt.Rows.Count > 0)
                 {
@@ -395,7 +428,7 @@ namespace Finalproject.Views
 
                     for (int i = 0; i < 1; i++)
                     {
-                        foreach (DataRow row in dt.Rows) 
+                        foreach (DataRow row in dt.Rows)
                         {
                             DataRow[] rows = dt.Select();
                             vehicleDisplay[i] = new VehicleDisplay();
@@ -407,12 +440,11 @@ namespace Finalproject.Views
                             flowLayoutPanel1.Controls.Add(vehicleDisplay[i]);
                         }
                     }
-                    
                 }
-
             }
         }
 
+        // Event handler for update price button click
         private void Updatepribtn_Click(object sender, EventArgs e)
         {
             decimal price = Convert.ToDecimal(pricetxtbox.Text);

@@ -46,9 +46,14 @@ CREATE TABLE Vehicle (
     vehicle_image Varbinary(MAX),
     Manufacture_date DATE
 );
+INSERT INTO Vehicle (Vehicle_name, Vehicle_type, Chassis_no, Engine_no, Price, vehicle_color, vehicle_model, vehicle_image, Manufacture_date)
+VALUES 
+('Toyota dw', 'dwd', '1HGBH4dw1JdX09186', '2T1BR32dwEdre54C123456', 24000.00, 'Blwdue', '2021', 
+    (SELECT * FROM OPENROWSET(BULK 'C:\Users\dhaks\Downloads\Airline Ticket Invoice Template.jpg', SINGLE_BLOB) AS Image), 
+    '2021-05-15');
 
 -- Owner Table
-CREATE TABLE Owner (
+CREATE TABLE VehicleOwner (
     Owner_ID INT PRIMARY KEY IDENTITY(1,1),
     Name VARCHAR(225),
     Address TEXT,
@@ -99,6 +104,13 @@ CREATE TABLE Sales (
     Sales_value DECIMAL(10, 2)
 );
 
+CREATE TABLE SalesTargets (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    ActualSales DECIMAL(18, 2),
+    SalesTarget DECIMAL(18, 2),
+    TargetPercentage DECIMAL(5, 2),
+	SMonth DATE,
+);
 -- Login Table
 CREATE TABLE Login (
     Login_ID INT PRIMARY KEY IDENTITY(1,1),
@@ -142,27 +154,24 @@ CREATE TABLE Budget_Expenses (
     Budget_ID INT,
     FOREIGN KEY (Budget_ID) REFERENCES Sales_Budget(Year)
 );
--- Revenue Table
-CREATE TABLE Revenue (
+
+CREATE TABLE NetProfit (
     Id INT PRIMARY KEY IDENTITY(1,1),
-    Amount DECIMAL(18, 2) NOT NULL,
-    Date DATETIME NOT NULL
+    Revenue DECIMAL(18, 2),
+    Expenses DECIMAL(18, 2),
+    NetProfit DECIMAL(18, 2),
+    CreatedAt DATETIME DEFAULT GETDATE()
 );
 
--- Expenses Table
-
-CREATE TABLE Expenses (
-    Id INT PRIMARY KEY IDENTITY(1,1),
-    Amount DECIMAL(18, 2) NOT NULL,
-    Date DATETIME NOT NULL
-);
-
+-- Example Insert Query
+INSERT INTO NetProfit (Revenue, Expenses, NetProfit) 
+VALUES (35534.00, 3444.00, 3000.00);
 
 
 -- Relationships and Foreign Keys
 -- Linking Vehicle with Owner
 ALTER TABLE Vehicle ADD Owner_ID INT;
-ALTER TABLE Vehicle ADD FOREIGN KEY (Owner_ID) REFERENCES Owner(Owner_ID);
+ALTER TABLE Vehicle ADD FOREIGN KEY (Owner_ID) REFERENCES VehicleOwner(Owner_ID);
 
 -- Linking Inventory with Sales
 ALTER TABLE Inventory ADD Sales_ID INT;

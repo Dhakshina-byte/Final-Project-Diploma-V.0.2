@@ -13,16 +13,18 @@ using static System.ComponentModel.Design.ObjectSelectorEditor;
 namespace Finalproject.Services
 {
 
+    // EmployeeService class provides methods to manage employee data
     public class EmployeeService
     {
         private readonly SqlConnection connection;
 
+        // Constructor initializes the database connection
         public EmployeeService()
         {
             connection = DatabaseConnection.GetConnection();
         }
 
-
+        // Method to get the last employee ID
         public int getthelastemp()
         {
             string query = "SELECT MAX(EID) FROM Employee";
@@ -35,12 +37,12 @@ namespace Finalproject.Services
                 sda.Fill(dt);
                 cmd.ExecuteNonQuery();
                 int lastEmpId = Convert.ToInt32(dt.Rows[0][0]);
-
-
                 return lastEmpId;
             }
         }
-        public void AddLogine(Employee employee,Login login)
+
+        // Method to add a login entry for an employee
+        public void AddLogine(Employee employee, Login login)
         {
             string query1 = "INSERT INTO Login (Username,Password,EID) VALUES (@Username,@Password,@EID)";
             SqlCommand cmd1 = new SqlCommand(query1, connection);
@@ -54,6 +56,7 @@ namespace Finalproject.Services
             }
         }
 
+        // Method to add a new employee
         public void AddEmployee(Employee employee, Role role, Department department)
         {
             string query = "INSERT INTO Employee (EName,Email, Mobile, City, Address, Role_ID,Department_ID) VALUES (@EName,@Email, @Mobile, @City, @Address, @Role_ID,@Department_ID)";
@@ -71,12 +74,13 @@ namespace Finalproject.Services
                 cmd.ExecuteNonQuery();
             }
         }
+
+        // Method to get all employees
         public DataTable getemployee()
         {
             string query = "SELECT E.EID,E.EName,E.Email,E.Mobile,E.City,E.Address,R.Role_Name,D.D_name AS Department_Name,D.D_location AS Department_Location FROM Employee E INNER JOIN Roles R ON E.Role_ID = R.Role_ID INNER JOIN Department D ON E.Department_ID = D.D_ID;";
             SqlCommand cmd = new SqlCommand(query, connection);
             {
-
                 connection.Close();
                 connection.Open();
                 cmd.ExecuteNonQuery();
@@ -86,6 +90,8 @@ namespace Finalproject.Services
                 return dt;
             }
         }
+
+        // Method to search employees by various fields
         public DataTable getEmployeeBysearch(string search)
         {
             string query = "SELECT E.EID, E.EName, E.Email, E.Mobile, E.City, E.Address, R.Role_Name, D.D_name AS Department_Name, D.D_location AS Department_Location FROM Employee E INNER JOIN Roles R ON E.Role_ID = R.Role_ID INNER JOIN Department D ON E.Department_ID = D.D_ID WHERE E.EName LIKE @search OR E.Email LIKE @search OR E.Mobile LIKE @search OR E.City LIKE @search OR E.Address LIKE @search OR R.Role_Name LIKE @search OR D.D_name LIKE @search OR D.D_location LIKE @search;";
@@ -100,12 +106,13 @@ namespace Finalproject.Services
                 return dt;
             }
         }
+
+        // Method to get all accountants
         public DataTable getAccountant()
         {
             string query = "SELECT E.EID,E.EName,E.Email,E.Mobile,E.City,E.Address,R.Role_Name,D.D_name AS Department_Name,D.D_location AS Department_Location FROM Employee E INNER JOIN Roles R ON E.Role_ID = R.Role_ID INNER JOIN Department D ON E.Department_ID = D.D_ID WHERE E.Role_ID=1;";
             SqlCommand cmd = new SqlCommand(query, connection);
             {
-
                 connection.Close();
                 connection.Open();
                 cmd.ExecuteNonQuery();
@@ -115,6 +122,8 @@ namespace Finalproject.Services
                 return dt;
             }
         }
+
+        // Method to get all sales directors
         public DataTable getSalesDirector()
         {
             string query = "SELECT E.EID,E.EName,E.Email,E.Mobile,E.City,E.Address,R.Role_Name,D.D_name AS Department_Name,D.D_location AS Department_Location FROM Employee E INNER JOIN Roles R ON E.Role_ID = R.Role_ID INNER JOIN Department D ON E.Department_ID = D.D_ID WHERE E.Role_ID=3;";
@@ -129,6 +138,8 @@ namespace Finalproject.Services
                 return dt;
             }
         }
+
+        // Method to get all inventory managers
         public DataTable getInventoryManager()
         {
             string query = "SELECT E.EID,E.EName,E.Email,E.Mobile,E.City,E.Address,R.Role_Name,D.D_name AS Department_Name,D.D_location AS Department_Location FROM Employee E INNER JOIN Roles R ON E.Role_ID = R.Role_ID INNER JOIN Department D ON E.Department_ID = D.D_ID WHERE E.Role_ID=2;";
@@ -143,6 +154,8 @@ namespace Finalproject.Services
                 return dt;
             }
         }
+
+        // Method to get all service heads
         public DataTable getServiceHead()
         {
             string query = "SELECT E.EID,E.EName,E.Email,E.Mobile,E.City,E.Address,R.Role_Name,D.D_name AS Department_Name,D.D_location AS Department_Location FROM Employee E INNER JOIN Roles R ON E.Role_ID = R.Role_ID INNER JOIN Department D ON E.Department_ID = D.D_ID WHERE E.Role_ID=4;";
@@ -157,6 +170,8 @@ namespace Finalproject.Services
                 return dt;
             }
         }
+
+        // Method to delete an employee by ID
         public void DeleteEmployee(int EID)
         {
             string query = "DELETE FROM Employee WHERE EID=@EID";
@@ -176,7 +191,9 @@ namespace Finalproject.Services
                 cmd1.ExecuteNonQuery();
             }
         }
-        public void UpdateEmployee(Employee employee,int EID)
+
+        // Method to update an employee's details
+        public void UpdateEmployee(Employee employee, int EID)
         {
             string query = "UPDATE Employee SET EName=@EName,Email=@Email,Mobile=@Mobile,City=@City,Address=@Address WHERE EID=@EID";
             SqlCommand cmd = new SqlCommand(query, connection);
@@ -191,7 +208,6 @@ namespace Finalproject.Services
                 cmd.Parameters.AddWithValue("@EID", EID);
                 cmd.ExecuteNonQuery();
             }
-        
         }
     }
 }
