@@ -44,13 +44,73 @@ CREATE TABLE Vehicle (
     vehicle_color VARCHAR(225),
     vehicle_model VARCHAR(225),
     vehicle_image Varbinary(MAX),
-    Manufacture_date DATE
+    Manufacture_date DATE,
+	Status VARCHAR (20),Owner_ID INT,Number_Plate VARCHAR (10)
+
 );
-INSERT INTO Vehicle (Vehicle_name, Vehicle_type, Chassis_no, Engine_no, Price, vehicle_color, vehicle_model, vehicle_image, Manufacture_date)
+INSERT INTO Vehicle (Vehicle_name, Vehicle_type, Chassis_no, Engine_no, Price, vehicle_color, vehicle_model, vehicle_image, Manufacture_date,Status)
 VALUES 
-('Toyota dw', 'dwd', '1HGBH4dw1JdX09186', '2T1BR32dwEdre54C123456', 24000.00, 'Blwdue', '2021', 
+('Toyota dw', 'dwd', '1HGBH4dw1JdX09dw186', '2T1BR32dwEdre54Cdw123456', 24000.00, 'Blwdue', '2021', 
     (SELECT * FROM OPENROWSET(BULK 'C:\Users\dhaks\Downloads\Airline Ticket Invoice Template.jpg', SINGLE_BLOB) AS Image), 
-    '2021-05-15');
+    '2021-05-15','SOLD');
+
+
+-- Service Booking Table
+CREATE TABLE Service_Booking (
+    Booking_ID INT PRIMARY KEY IDENTITY(1,1),
+    Vehicle_ID INT,
+    Booking_Date DATE,
+    Service_Type VARCHAR(225),
+    Status VARCHAR(20),
+    FOREIGN KEY (Vehicle_ID) REFERENCES Vehicle(Vehicle_ID)
+);
+
+-- Vehicle Inspection Table
+CREATE TABLE Vehicle_Inspection (
+    Inspection_ID INT PRIMARY KEY IDENTITY(1,1),
+    Vehicle_ID INT,
+    Inspection_Date DATE,
+    Inspector_Name VARCHAR(225),
+    Inspection_Result VARCHAR(225),
+    FOREIGN KEY (Vehicle_ID) REFERENCES Vehicle(Vehicle_ID)
+);
+
+-- Maintain Table
+CREATE TABLE Maintain (
+    Maintain_ID INT PRIMARY KEY IDENTITY(1,1),
+    Vehicle_ID INT,
+    Maintain_Date DATE,
+    Description VARCHAR(255),
+    FOREIGN KEY (Vehicle_ID) REFERENCES Vehicle(Vehicle_ID)
+);
+
+-- Setup Table
+CREATE TABLE Setup (
+    Setup_ID INT PRIMARY KEY IDENTITY(1,1),
+    Vehicle_ID INT,
+    Setup_Date DATE,
+    Setup_Details VARCHAR(255),
+    FOREIGN KEY (Vehicle_ID) REFERENCES Vehicle(Vehicle_ID)
+);
+
+-- Repair Table
+CREATE TABLE Repair (
+    Repair_ID INT PRIMARY KEY IDENTITY(1,1),
+    Vehicle_ID INT,
+    Repair_Date DATE,
+    Repair_Description VARCHAR(255),
+    Cost DECIMAL(10, 2),
+    FOREIGN KEY (Vehicle_ID) REFERENCES Vehicle(Vehicle_ID)
+);
+
+-- Service Progress Table
+CREATE TABLE Service_Progress (
+    Progress_ID INT PRIMARY KEY IDENTITY(1,1),
+    Booking_ID INT,
+    Progress_Date DATE,
+    Progress_Description VARCHAR(255),
+    FOREIGN KEY (Booking_ID) REFERENCES Service_Booking(Booking_ID)
+);
 
 -- Owner Table
 CREATE TABLE VehicleOwner (
@@ -172,6 +232,7 @@ VALUES (35534.00, 3444.00, 3000.00);
 -- Linking Vehicle with Owner
 ALTER TABLE Vehicle ADD Owner_ID INT;
 ALTER TABLE Vehicle ADD FOREIGN KEY (Owner_ID) REFERENCES VehicleOwner(Owner_ID);
+
 
 -- Linking Inventory with Sales
 ALTER TABLE Inventory ADD Sales_ID INT;
