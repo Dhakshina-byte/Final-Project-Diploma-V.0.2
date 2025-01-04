@@ -38,13 +38,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CEO));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.Home = new System.Windows.Forms.TabPage();
             this.Employees = new System.Windows.Forms.TabPage();
@@ -80,12 +80,19 @@
             this.RecodsDataGridView = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.Recordscombobox = new MaterialSkin.Controls.MaterialComboBox();
             this.NetProfit = new System.Windows.Forms.TabPage();
+            this.NetProfittable = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.netprofitchart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Pricing = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.StockLevels = new System.Windows.Forms.TabPage();
             this.Report = new System.Windows.Forms.TabPage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.NetProfittable = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.chassistxtbox = new MaterialSkin.Controls.MaterialTextBox();
+            this.pricetxtbox = new MaterialSkin.Controls.MaterialTextBox();
+            this.Chassinumber = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.Updatepribtn = new MaterialSkin.Controls.MaterialButton();
             this.materialTabControl1.SuspendLayout();
             this.Employees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGridView)).BeginInit();
@@ -94,8 +101,10 @@
             this.Records.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RecodsDataGridView)).BeginInit();
             this.NetProfit.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.netprofitchart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NetProfittable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.netprofitchart)).BeginInit();
+            this.Pricing.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -758,70 +767,6 @@
             this.NetProfit.TabIndex = 3;
             this.NetProfit.Text = "Net Profit";
             // 
-            // netprofitchart
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.netprofitchart.ChartAreas.Add(chartArea2);
-            this.netprofitchart.Dock = System.Windows.Forms.DockStyle.Top;
-            legend2.Name = "Legend1";
-            this.netprofitchart.Legends.Add(legend2);
-            this.netprofitchart.Location = new System.Drawing.Point(0, 0);
-            this.netprofitchart.Name = "netprofitchart";
-            this.netprofitchart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.netprofitchart.Series.Add(series2);
-            this.netprofitchart.Size = new System.Drawing.Size(1928, 803);
-            this.netprofitchart.TabIndex = 0;
-            this.netprofitchart.Text = "chart2";
-            this.netprofitchart.Click += new System.EventHandler(this.chart2_Click);
-            // 
-            // Pricing
-            // 
-            this.Pricing.ImageKey = "icons8-price-32.png";
-            this.Pricing.Location = new System.Drawing.Point(4, 39);
-            this.Pricing.Name = "Pricing";
-            this.Pricing.Size = new System.Drawing.Size(1928, 911);
-            this.Pricing.TabIndex = 4;
-            this.Pricing.Text = "Pricing";
-            this.Pricing.UseVisualStyleBackColor = true;
-            // 
-            // StockLevels
-            // 
-            this.StockLevels.ImageKey = "icons8-stocks-32.png";
-            this.StockLevels.Location = new System.Drawing.Point(4, 39);
-            this.StockLevels.Name = "StockLevels";
-            this.StockLevels.Size = new System.Drawing.Size(1928, 911);
-            this.StockLevels.TabIndex = 5;
-            this.StockLevels.Text = "Stock Levels";
-            this.StockLevels.UseVisualStyleBackColor = true;
-            // 
-            // Report
-            // 
-            this.Report.ImageKey = "icons8-reports-32.png";
-            this.Report.Location = new System.Drawing.Point(4, 39);
-            this.Report.Name = "Report";
-            this.Report.Size = new System.Drawing.Size(1928, 911);
-            this.Report.TabIndex = 6;
-            this.Report.Text = " Report";
-            this.Report.UseVisualStyleBackColor = true;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "icons8-reports-32.png");
-            this.imageList1.Images.SetKeyName(1, "icons8-budget-35.png");
-            this.imageList1.Images.SetKeyName(2, "icons8-price-32.png");
-            this.imageList1.Images.SetKeyName(3, "icons8-home-32.png");
-            this.imageList1.Images.SetKeyName(4, "icons8-employee-32.png");
-            this.imageList1.Images.SetKeyName(5, "icons8-profit-32.png");
-            this.imageList1.Images.SetKeyName(6, "icons8-stocks-32.png");
-            this.imageList1.Images.SetKeyName(7, "icons8-total-sales-32.png");
-            this.imageList1.Images.SetKeyName(8, "icons8-records-32 (1).png");
-            // 
             // NetProfittable
             // 
             this.NetProfittable.AllowCustomTheming = false;
@@ -840,7 +785,7 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.NetProfittable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.NetProfittable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.NetProfittable.ColumnHeadersHeight = 40;
             this.NetProfittable.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.NetProfittable.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.NetProfittable.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
@@ -883,6 +828,172 @@
             this.NetProfittable.TabIndex = 1;
             this.NetProfittable.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
+            // netprofitchart
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.netprofitchart.ChartAreas.Add(chartArea2);
+            this.netprofitchart.Dock = System.Windows.Forms.DockStyle.Top;
+            legend2.Name = "Legend1";
+            this.netprofitchart.Legends.Add(legend2);
+            this.netprofitchart.Location = new System.Drawing.Point(0, 0);
+            this.netprofitchart.Name = "netprofitchart";
+            this.netprofitchart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.netprofitchart.Series.Add(series2);
+            this.netprofitchart.Size = new System.Drawing.Size(1928, 803);
+            this.netprofitchart.TabIndex = 0;
+            this.netprofitchart.Text = "chart2";
+            this.netprofitchart.Click += new System.EventHandler(this.chart2_Click);
+            // 
+            // Pricing
+            // 
+            this.Pricing.Controls.Add(this.panel1);
+            this.Pricing.Controls.Add(this.flowLayoutPanel1);
+            this.Pricing.ImageKey = "icons8-price-32.png";
+            this.Pricing.Location = new System.Drawing.Point(4, 39);
+            this.Pricing.Name = "Pricing";
+            this.Pricing.Size = new System.Drawing.Size(1928, 911);
+            this.Pricing.TabIndex = 4;
+            this.Pricing.Text = "Pricing";
+            this.Pricing.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1434, 911);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // StockLevels
+            // 
+            this.StockLevels.ImageKey = "icons8-stocks-32.png";
+            this.StockLevels.Location = new System.Drawing.Point(4, 39);
+            this.StockLevels.Name = "StockLevels";
+            this.StockLevels.Size = new System.Drawing.Size(1928, 911);
+            this.StockLevels.TabIndex = 5;
+            this.StockLevels.Text = "Stock Levels";
+            this.StockLevels.UseVisualStyleBackColor = true;
+            // 
+            // Report
+            // 
+            this.Report.ImageKey = "icons8-reports-32.png";
+            this.Report.Location = new System.Drawing.Point(4, 39);
+            this.Report.Name = "Report";
+            this.Report.Size = new System.Drawing.Size(1928, 911);
+            this.Report.TabIndex = 6;
+            this.Report.Text = " Report";
+            this.Report.UseVisualStyleBackColor = true;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "icons8-reports-32.png");
+            this.imageList1.Images.SetKeyName(1, "icons8-budget-35.png");
+            this.imageList1.Images.SetKeyName(2, "icons8-price-32.png");
+            this.imageList1.Images.SetKeyName(3, "icons8-home-32.png");
+            this.imageList1.Images.SetKeyName(4, "icons8-employee-32.png");
+            this.imageList1.Images.SetKeyName(5, "icons8-profit-32.png");
+            this.imageList1.Images.SetKeyName(6, "icons8-stocks-32.png");
+            this.imageList1.Images.SetKeyName(7, "icons8-total-sales-32.png");
+            this.imageList1.Images.SetKeyName(8, "icons8-records-32 (1).png");
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel1.Controls.Add(this.Updatepribtn);
+            this.panel1.Controls.Add(this.materialLabel1);
+            this.panel1.Controls.Add(this.Chassinumber);
+            this.panel1.Controls.Add(this.pricetxtbox);
+            this.panel1.Controls.Add(this.chassistxtbox);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(1440, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(488, 911);
+            this.panel1.TabIndex = 1;
+            // 
+            // chassistxtbox
+            // 
+            this.chassistxtbox.AnimateReadOnly = false;
+            this.chassistxtbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.chassistxtbox.Depth = 0;
+            this.chassistxtbox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.chassistxtbox.LeadingIcon = null;
+            this.chassistxtbox.Location = new System.Drawing.Point(66, 280);
+            this.chassistxtbox.MaxLength = 50;
+            this.chassistxtbox.MouseState = MaterialSkin.MouseState.OUT;
+            this.chassistxtbox.Multiline = false;
+            this.chassistxtbox.Name = "chassistxtbox";
+            this.chassistxtbox.Size = new System.Drawing.Size(398, 50);
+            this.chassistxtbox.TabIndex = 0;
+            this.chassistxtbox.Text = "";
+            this.chassistxtbox.TrailingIcon = null;
+            // 
+            // pricetxtbox
+            // 
+            this.pricetxtbox.AnimateReadOnly = false;
+            this.pricetxtbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pricetxtbox.Depth = 0;
+            this.pricetxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.pricetxtbox.LeadingIcon = null;
+            this.pricetxtbox.Location = new System.Drawing.Point(145, 397);
+            this.pricetxtbox.MaxLength = 50;
+            this.pricetxtbox.MouseState = MaterialSkin.MouseState.OUT;
+            this.pricetxtbox.Multiline = false;
+            this.pricetxtbox.Name = "pricetxtbox";
+            this.pricetxtbox.Size = new System.Drawing.Size(207, 50);
+            this.pricetxtbox.TabIndex = 1;
+            this.pricetxtbox.Text = "";
+            this.pricetxtbox.TrailingIcon = null;
+            // 
+            // Chassinumber
+            // 
+            this.Chassinumber.AutoSize = true;
+            this.Chassinumber.Depth = 0;
+            this.Chassinumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.Chassinumber.Location = new System.Drawing.Point(3, 247);
+            this.Chassinumber.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Chassinumber.Name = "Chassinumber";
+            this.Chassinumber.Size = new System.Drawing.Size(117, 19);
+            this.Chassinumber.TabIndex = 2;
+            this.Chassinumber.Text = "Chassis Number";
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Location = new System.Drawing.Point(31, 414);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(36, 19);
+            this.materialLabel1.TabIndex = 3;
+            this.materialLabel1.Text = "Price";
+            // 
+            // Updatepribtn
+            // 
+            this.Updatepribtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Updatepribtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.Updatepribtn.Depth = 0;
+            this.Updatepribtn.HighEmphasis = true;
+            this.Updatepribtn.Icon = null;
+            this.Updatepribtn.Location = new System.Drawing.Point(174, 501);
+            this.Updatepribtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Updatepribtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Updatepribtn.Name = "Updatepribtn";
+            this.Updatepribtn.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.Updatepribtn.Size = new System.Drawing.Size(77, 36);
+            this.Updatepribtn.TabIndex = 4;
+            this.Updatepribtn.Text = "Update";
+            this.Updatepribtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.Updatepribtn.UseAccentColor = false;
+            this.Updatepribtn.UseVisualStyleBackColor = true;
+            this.Updatepribtn.Click += new System.EventHandler(this.Updatepribtn_Click);
+            // 
             // CEO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -905,8 +1016,11 @@
             this.Records.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.RecodsDataGridView)).EndInit();
             this.NetProfit.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.netprofitchart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NetProfittable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.netprofitchart)).EndInit();
+            this.Pricing.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -920,7 +1034,6 @@
         private System.Windows.Forms.TabPage Home;
         private System.Windows.Forms.TabPage Records;
         private System.Windows.Forms.TabPage NetProfit;
-        private System.Windows.Forms.TabPage Pricing;
         private System.Windows.Forms.TabPage StockLevels;
         private System.Windows.Forms.TabPage Report;
         private MaterialSkin.Controls.MaterialTextBox EmpSearchtxtbox;
@@ -954,5 +1067,13 @@
         private Bunifu.UI.WinForms.BunifuDataGridView RecodsDataGridView;
         private System.Windows.Forms.DataVisualization.Charting.Chart netprofitchart;
         private Bunifu.UI.WinForms.BunifuDataGridView NetProfittable;
+        private System.Windows.Forms.TabPage Pricing;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel1;
+        private MaterialSkin.Controls.MaterialButton Updatepribtn;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialLabel Chassinumber;
+        private MaterialSkin.Controls.MaterialTextBox pricetxtbox;
+        private MaterialSkin.Controls.MaterialTextBox chassistxtbox;
     }
 }

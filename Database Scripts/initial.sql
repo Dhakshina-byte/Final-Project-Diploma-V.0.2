@@ -40,6 +40,10 @@ CREATE TABLE Vehicle (
     Vehicle_type VARCHAR(225),
     Chassis_no VARCHAR(225) UNIQUE,
     Engine_no VARCHAR(225) UNIQUE,
+    Price DECIMAL(10, 2),
+    vehicle_color VARCHAR(225),
+    vehicle_model VARCHAR(225),
+    vehicle_image Varbinary(MAX),
     Manufacture_date DATE
 );
 

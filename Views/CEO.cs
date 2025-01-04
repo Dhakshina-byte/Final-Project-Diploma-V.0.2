@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,8 +21,10 @@ namespace Finalproject.Views
     public partial class CEO : MaterialForm
     {
         private readonly EmployeeController employeeController;
+        private readonly VehicleController vehicleController;
         private readonly SalesController salesController;
         private NetProfitController controller;
+        private Vehicles vehicles;
         private Employee employee;
         private Department department;
         private Role role;
@@ -32,8 +35,10 @@ namespace Finalproject.Views
             InitializeComponent();
             employeeController = new EmployeeController();
             salesController = new SalesController();
+            vehicleController = new VehicleController();
             employee = new Employee();
             department = new Department();
+            vehicles = new Vehicles();
             role = new Role();
             login = new Login();
             salesBudget = new SalesBudget();
@@ -80,6 +85,7 @@ namespace Finalproject.Views
             MonitorSalesBudget();
             cheakyear();
             ShowProfit();
+            GenrateDyanmicVehicleDisplay();
             controller.LoadHistoricalData();
         }
         private void showAllEmployees()
@@ -371,6 +377,47 @@ namespace Finalproject.Views
         private void chart2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void GenrateDyanmicVehicleDisplay() 
+        {
+            flowLayoutPanel1.Controls.Clear();
+            DataTable dt = vehicleController.GetVehicles();
+            if(dt != null) 
+            {
+                if (dt.Rows.Count > 0)
+                {
+                    VehicleDisplay[] vehicleDisplay = new VehicleDisplay[dt.Rows.Count];
+
+                    for (int i = 0; i < 1; i++)
+                    {
+                        foreach (DataRow row in dt.Rows) 
+                        {
+                            DataRow[] rows = dt.Select();
+                            vehicleDisplay[i] = new VehicleDisplay();
+                            vehicleDisplay[i].VehicleName = row["Vehicle_name"].ToString();
+                            vehicleDisplay[i].VehicleType = row["vehicle_model"].ToString();
+                            MemoryStream ms = new MemoryStream((byte[])row["vehicle_image"]);
+                            vehicleDisplay[i].Chassis_no = row["Chassis_no"].ToString();
+                            vehicleDisplay[i].Icon = new Bitmap(ms);
+                            flowLayoutPanel1.Controls.Add(vehicleDisplay[i]);
+                        }
+                    }
+                    
+                }
+
+            }
+        }
+
+        private void Updatepribtn_Click(object sender, EventArgs e)
+        {
+            decimal price = Convert.ToDecimal(pricetxtbox.Text);
+            string chassis_no = chassistxtbox.Text;
+            vehicleController.UpdatePrice(price, chassis_no);
         }
     }
 }
