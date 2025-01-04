@@ -30,6 +30,21 @@ public class VehicleController
         {
             vehicleService.UpdatePrice(chassis_no, price);
         }
+
+        public void AddVehicle(Vehicles vehicle)
+        {
+            vehicleService.InsertVehicle(vehicle);
+        }
+
+        public void UpdateVehicle(Vehicles vehicle)
+        {
+            vehicleService.UpdateVehicle(vehicle);
+        }
+
+        public void RemoveVehicle(int vehicleId)
+        {
+            vehicleService.DeleteVehicle(vehicleId);
+        }
     }
 
 }

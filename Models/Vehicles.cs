@@ -14,8 +14,13 @@ namespace Finalproject.Models
         public string Chassis_no { get; set; }
         public string Engine_no { get; set; }
         public decimal Price { get; set; }
+        public string Vehicle_color { get; set; }
+        public string Vehicle_model { get; set; }
+        public byte[] Vehicle_image { get; set; }
         public DateTime Manufacture_date { get; set; }
-
+        public string Status { get; set; }
+        public int Owner_ID { get; set; }
+        public string Number_Plate { get; set; }
     }
 
 }

@@ -188,17 +188,30 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\BookingServiceController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\MaintainController.cs" />
     <Compile Include="Controllers\NetProfitController.cs" />
+    <Compile Include="Controllers\RepairController.cs" />
     <Compile Include="Controllers\SalesController.cs" />
+    <Compile Include="Controllers\ServiceProgressController.cs" />
+    <Compile Include="Controllers\SetupController.cs" />
     <Compile Include="Controllers\VehicleController.cs" />
+    <Compile Include="Controllers\VehicleInspectionController.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\NetProfitModel.cs" />
     <Compile Include="Models\Sales.cs" />
     <Compile Include="Models\Vehicles.cs" />
+    <Compile Include="Models\VehicleSer.cs" />
     <Compile Include="Services\EmployeeService.cs" />
+    <Compile Include="Services\MaintainService.cs" />
     <Compile Include="Services\NetProfitService.cs" />
+    <Compile Include="Services\RepairService.cs" />
     <Compile Include="Services\SalesService.cs" />
+    <Compile Include="Services\ServiceBookingService.cs" />
+    <Compile Include="Services\ServiceProgressService.cs" />
+    <Compile Include="Services\SetupService.cs" />
+    <Compile Include="Services\VehicleInspectionService.cs" />
     <Compile Include="Services\VehicleService.cs" />
     <Compile Include="Views\Accountant .cs">
       <SubType>Form</SubType>
@@ -242,6 +255,12 @@
     <Compile Include="Views\ServiceHead.Designer.cs">
       <DependentUpon>ServiceHead.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ServiceManeger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ServiceManeger.Designer.cs">
+      <DependentUpon>ServiceManeger.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\VehicleDisplay.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -276,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ServiceHead.resx">
       <DependentUpon>ServiceHead.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ServiceManeger.resx">
+      <DependentUpon>ServiceManeger.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\VehicleDisplay.resx">
       <DependentUpon>VehicleDisplay.cs</DependentUpon>
