@@ -2,6 +2,7 @@
 using Finalproject.Services;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,12 @@ namespace Finalproject.Controllers
         {
             setupSer = new SetupService();
         }
+
+        public DataTable GetSetups()
+        {
+            return setupSer.GetSetup();
+        }
+
         public void AddSetup(Setup setup)
         {
             setupSer.InsertSetup(setup);

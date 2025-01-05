@@ -2,6 +2,7 @@
 using Finalproject.Services;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,15 @@ namespace Finalproject.Controllers
             serviceProgressService = new ServiceProgressService();
         }
 
+        public DataTable serchbyID(int id)
+        {
+            return serviceProgressService.SearchServiceProgress(id);
+        }
+
+        public DataTable GetAllServiceProgress()
+        {
+            return serviceProgressService.GetAllServiceProgress();
+        }
         public void AddServiceProgress(ServiceProgress progress)
         {
             serviceProgressService.InsertServiceProgress(progress);

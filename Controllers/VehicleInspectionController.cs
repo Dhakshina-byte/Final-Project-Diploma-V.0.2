@@ -2,6 +2,7 @@
 using Finalproject.Services;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,11 @@ namespace Finalproject.Controllers
             vehicleInspection = new VehicleInspectionService();
         }
 
+        public DataTable GetVehicleInspection()
+        {
+            return vehicleInspection.GetVehicleInspection();
+        }
+
         public void AddVehicleInspection(VehicleInspection inspection)
         {
             vehicleInspection.InsertVehicleInspection(inspection);
@@ -27,9 +33,9 @@ namespace Finalproject.Controllers
             vehicleInspection.UpdateVehicleInspection(inspection);
         }
 
-        public void RemoveVehicleInspection(int inspectionId)
+        public void RemoveVehicleInspection(int inspectionId,int Vehicle_ID)
         {
-            vehicleInspection.DeleteVehicleInspection(inspectionId);
+            vehicleInspection.DeleteVehicleInspection(inspectionId, Vehicle_ID);
         }
     }
 }

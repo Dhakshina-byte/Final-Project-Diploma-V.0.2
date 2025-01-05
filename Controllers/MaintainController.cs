@@ -2,6 +2,7 @@
 using Finalproject.Services;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,11 @@ namespace Finalproject.Controllers
     {
 
         private MaintainService maintainService = new MaintainService();
+
+        public DataTable GetMaintain()
+        {
+            return maintainService.GetMaintain();
+        }
 
         public void AddMaintain(Maintain maintain)
         {

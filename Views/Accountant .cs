@@ -28,5 +28,10 @@ namespace Finalproject.Views
             Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200,
             TextShade.WHITE);
         }
+
+        private void Accountant_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

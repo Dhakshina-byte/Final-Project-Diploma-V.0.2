@@ -2,6 +2,7 @@
 using Finalproject.Services;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,10 @@ namespace Finalproject.Controllers
             repairService = new RepairService();
         }
 
+        public DataTable showRepair() 
+        {
+            return repairService.showRepair();
+        }
 
         public void AddRepair(Repair repair)
         {

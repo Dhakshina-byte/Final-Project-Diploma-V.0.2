@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
@@ -14,6 +15,16 @@ namespace Finalproject.Services
         public WashService()
         {
             conn = DatabaseConnection.GetConnection();
+        }
+
+        public DataTable showWash()
+        {
+            string query = "SELECT Wash.Wash_ID, Wash.Vehicle_ID, Wash.Repair_Date, Wash.Status, Vehicle.Number_Plate FROM Wash INNER JOIN Vehicle ON Wash.Vehicle_ID = Vehicle.Vehicle_ID;";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            return dt;
         }
 
         public void InsertWash(Wash wash)
@@ -36,7 +47,7 @@ namespace Finalproject.Services
         public void UpdateWash(Wash wash)
         {
             
-                string query = "UPDATE Wash SET Vehicle_ID = @Vehicle_ID, Repair_Date = @Repair_Date, " +
+                string query = "UPDATE Wash SET Vehicle_ID = @Vehicle_ID, " +
                                "Status = @Status " +
                                "WHERE Wash_ID = @Wash_ID";
                 SqlCommand cmd = new SqlCommand(query, conn);
@@ -44,7 +55,6 @@ namespace Finalproject.Services
                 conn.Close();
                 cmd.Parameters.AddWithValue("@Wash_ID", wash.Wash_ID);
                 cmd.Parameters.AddWithValue("@Vehicle_ID", wash.Vehicle_ID);
-                cmd.Parameters.AddWithValue("@Repair_Date", wash.Repair_Date);
                 cmd.Parameters.AddWithValue("@Status", wash.Status);
 
                 conn.Open();

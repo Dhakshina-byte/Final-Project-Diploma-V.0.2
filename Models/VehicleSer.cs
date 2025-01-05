@@ -67,8 +67,13 @@ public class Wash
 
     public class ServiceProgress
     {
-        public int Progress_ID { get; set; }
-        public int Booking_ID { get; set; }
-        public DateTime Progress_Date { get; set; }
-        public string Progress_Description { get; set; }
-    }
+    public int Progress_ID { get; set; }
+    public int Vehicle_ID { get; set; }
+    public DateTime Booking_Date { get; set; }
+    public bool Inspection { get; set; }
+    public bool Maintain { get; set; }
+    public bool Setup { get; set; }
+    public bool Repair { get; set; }
+    public bool Wash { get; set; }
+    public string Status { get; set; }
+}

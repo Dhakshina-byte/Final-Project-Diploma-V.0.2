@@ -54,6 +54,22 @@ namespace Finalproject.Services
             }
         }
 
+        public void ChangeServiceBooking(ServiceBooking booking)
+        {
+
+            string query = "UPDATE Service_Booking SET  Booking_Date = @Booking_Date, Setup = @Setup" +
+                       "WHERE Booking_ID = @Booking_ID";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            {
+                connection.Close();
+                cmd.Parameters.AddWithValue("@Booking_ID", booking.Booking_ID);
+                cmd.Parameters.AddWithValue("@Status", booking.Status); ;
+
+                connection.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
         public void UpdateServiceBooking(ServiceBooking booking)
         {
 
@@ -71,13 +87,13 @@ namespace Finalproject.Services
             }
         }
 
-        public void DeleteServiceBooking(int bookingId)
+        public void DeleteServiceBooking(int  id)
         {
-            string query = "DELETE FROM Service_Booking WHERE Booking_ID = @Booking_ID";
+            string query = "DELETE FROM Service_Booking WHERE Vehicle_ID = @Vehicle_ID";
             SqlCommand cmd = new SqlCommand(query, connection);
             {
                 connection.Close();
-                cmd.Parameters.AddWithValue("@Booking_ID", bookingId);
+                cmd.Parameters.AddWithValue("@Vehicle_ID", id);
 
                 connection.Open();
                 cmd.ExecuteNonQuery();

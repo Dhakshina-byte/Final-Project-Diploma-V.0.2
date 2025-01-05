@@ -73,7 +73,7 @@
             this.InventoryCostCalculate.Location = new System.Drawing.Point(4, 39);
             this.InventoryCostCalculate.Name = "InventoryCostCalculate";
             this.InventoryCostCalculate.Padding = new System.Windows.Forms.Padding(3);
-            this.InventoryCostCalculate.Size = new System.Drawing.Size(1910, 864);
+            this.InventoryCostCalculate.Size = new System.Drawing.Size(1928, 911);
             this.InventoryCostCalculate.TabIndex = 1;
             this.InventoryCostCalculate.Text = "Inventory Cost Calculate";
             this.InventoryCostCalculate.UseVisualStyleBackColor = true;
@@ -83,7 +83,7 @@
             this.Reports.ImageKey = "icons8-reports-32.png";
             this.Reports.Location = new System.Drawing.Point(4, 39);
             this.Reports.Name = "Reports";
-            this.Reports.Size = new System.Drawing.Size(1910, 864);
+            this.Reports.Size = new System.Drawing.Size(1928, 911);
             this.Reports.TabIndex = 2;
             this.Reports.Text = "Reports";
             this.Reports.UseVisualStyleBackColor = true;
@@ -93,7 +93,7 @@
             this.NetProfitCalulator.ImageKey = "icons8-profit-32.png";
             this.NetProfitCalulator.Location = new System.Drawing.Point(4, 39);
             this.NetProfitCalulator.Name = "NetProfitCalulator";
-            this.NetProfitCalulator.Size = new System.Drawing.Size(1910, 864);
+            this.NetProfitCalulator.Size = new System.Drawing.Size(1928, 911);
             this.NetProfitCalulator.TabIndex = 3;
             this.NetProfitCalulator.Text = "Net Profit Calulator";
             this.NetProfitCalulator.UseVisualStyleBackColor = true;
@@ -117,6 +117,7 @@
             this.DrawerTabControl = this.materialTabControl1;
             this.Name = "Accountant";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Accountant_Load);
             this.materialTabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 

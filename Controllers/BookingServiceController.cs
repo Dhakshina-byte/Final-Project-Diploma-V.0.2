@@ -27,9 +27,9 @@ namespace Finalproject.Controllers
             bookingRepository.UpdateServiceBooking(booking);
         }
 
-        public void RemoveServiceBooking(int bookingId)
+        public void RemoveServiceBooking(int id)
         {
-            bookingRepository.DeleteServiceBooking(bookingId);
+            bookingRepository.DeleteServiceBooking(id);
         }
     }
 }
