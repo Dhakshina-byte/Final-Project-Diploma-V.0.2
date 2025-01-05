@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace Finalproject.Views
 {
-    public partial class SalesGeneralView : MaterialForm
+    public partial class SalesManager : MaterialForm
     {
-        public SalesGeneralView()
+        public SalesManager()
         {
             InitializeComponent();
             InitializeMaterialSkin();
@@ -29,12 +29,7 @@ namespace Finalproject.Views
             TextShade.WHITE);
         }
 
-        private void SalesGeneralView_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Home_Click(object sender, EventArgs e)
+        private void SalesManager_Load(object sender, EventArgs e)
         {
 
         }

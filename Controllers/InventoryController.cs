@@ -12,12 +12,12 @@ namespace Finalproject.Controllers
     {
         private readonly InventoryService inventoryService;
 
-       public InventoryController()
-       {
+        public InventoryController()
+        {
 
             inventoryService = new InventoryService();
 
-       }
+        }
         public void AddInventory(Inventory inventory)
         {
             inventoryService.InsertInventory(inventory);

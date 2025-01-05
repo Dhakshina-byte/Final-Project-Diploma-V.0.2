@@ -33,7 +33,7 @@ namespace Finalproject.Controllers
             vehicleInspection.UpdateVehicleInspection(inspection);
         }
 
-        public void RemoveVehicleInspection(int inspectionId,int Vehicle_ID)
+        public void RemoveVehicleInspection(int inspectionId, int Vehicle_ID)
         {
             vehicleInspection.DeleteVehicleInspection(inspectionId, Vehicle_ID);
         }

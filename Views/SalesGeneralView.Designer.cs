@@ -84,6 +84,7 @@
             this.Home.TabIndex = 3;
             this.Home.Text = "Home";
             this.Home.UseVisualStyleBackColor = true;
+            this.Home.Click += new System.EventHandler(this.Home_Click);
             // 
             // Employee
             // 

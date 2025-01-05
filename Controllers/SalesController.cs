@@ -33,9 +33,9 @@ namespace Finalproject.Controllers
             decimal remainingAmount = dataAccess.GetRemainingAmount();
             return (int)remainingAmount;
         }
-        public int Getyear() 
+        public int Getyear()
         {
-          int year =  dataAccess.GetCurrentYearFromSalesBudget();
+            int year = dataAccess.GetCurrentYearFromSalesBudget();
             return year;
         }
         public void UpdateBudgetAmount(int year, decimal BudgetAmount)
@@ -43,18 +43,18 @@ namespace Finalproject.Controllers
             dataAccess.UpdateBudgetAmount(year, BudgetAmount);
 
         }
- 
 
-            public decimal CalculateTargetPercentage(decimal actualSales, decimal salesTarget)
+
+        public decimal CalculateTargetPercentage(decimal actualSales, decimal salesTarget)
+        {
+            if (salesTarget > 0)
             {
-                if (salesTarget > 0)
-                {
-                    return (actualSales / salesTarget) * 100;
-                }
-                throw new ArgumentException("Sales Target must be greater than zero.");
+                return (actualSales / salesTarget) * 100;
             }
+            throw new ArgumentException("Sales Target must be greater than zero.");
+        }
 
-            public void SaveSalesTarget(SalesTarget salesTarget)
+        public void SaveSalesTarget(SalesTarget salesTarget)
         {
             dataAccess.SaveSalesTarget(salesTarget);
         }

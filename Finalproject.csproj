@@ -265,6 +265,12 @@
     <Compile Include="Views\SalesDirector.Designer.cs">
       <DependentUpon>SalesDirector.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\SalesManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SalesManager.Designer.cs">
+      <DependentUpon>SalesManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ServiceHead.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SalesGeneralView.resx">
       <DependentUpon>SalesGeneralView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SalesManager.resx">
+      <DependentUpon>SalesManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ServiceHead.resx">
       <DependentUpon>ServiceHead.cs</DependentUpon>

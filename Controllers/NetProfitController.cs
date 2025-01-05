@@ -15,9 +15,9 @@ namespace Finalproject.Controllers
     {
         private readonly Services.NetProfitService dataAccess;
         private CEO CEO;
-    
 
-    public NetProfitController(CEO view)
+
+        public NetProfitController(CEO view)
         {
             this.CEO = view;
             this.dataAccess = new NetProfitService();

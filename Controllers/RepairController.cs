@@ -18,7 +18,7 @@ namespace Finalproject.Controllers
             repairService = new RepairService();
         }
 
-        public DataTable showRepair() 
+        public DataTable showRepair()
         {
             return repairService.showRepair();
         }
