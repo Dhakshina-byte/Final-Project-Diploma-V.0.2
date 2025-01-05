@@ -17,7 +17,7 @@ namespace Finalproject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ServiceManeger());
+            Application.Run(new Inventory_Manager());
         }
     }
 }
