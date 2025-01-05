@@ -205,6 +205,7 @@
     <Compile Include="Controllers\SalesController.cs" />
     <Compile Include="Controllers\ServiceProgressController.cs" />
     <Compile Include="Controllers\SetupController.cs" />
+    <Compile Include="Controllers\ToolController.cs" />
     <Compile Include="Controllers\VehicleController.cs" />
     <Compile Include="Controllers\VehicleInspectionController.cs" />
     <Compile Include="Controllers\washControllers.cs" />

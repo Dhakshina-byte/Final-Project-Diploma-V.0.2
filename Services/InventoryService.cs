@@ -1,6 +1,7 @@
 ﻿using Finalproject.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,26 @@ namespace Finalproject.Services
         {
             conn = DatabaseConnection.GetConnection();
         }
+        
+        public DataTable ShowInventory()
+        {
+            DataTable dt = new DataTable();
+            conn.Close();
+            conn.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM Inventory", conn);
+            sda.Fill(dt);
+            return dt;
+        }
+        public DataTable showtools()
+        {
+            DataTable dt = new DataTable();
+            conn.Close();
+            conn.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM Inventory WHERE ", conn);
+            sda.Fill(dt);
+            return dt;
+        }
+
         public void InsertInventory(Inventory inventory)
         {
 

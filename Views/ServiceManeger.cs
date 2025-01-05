@@ -25,12 +25,14 @@ namespace Finalproject.Views
         private readonly washControllers washControllers;
         private readonly MaintainController maintainControllers;
         private readonly SetupController setupControllers;
+        private readonly ToolController toolController;
         private readonly RepairController repairControllers;
         private readonly ServiceProgressController serviceProgressController;
         private  readonly VehicleInspectionController vehicleInspectionController;
         private ServiceBooking serviceBooking;
         private VehicleInspection vehicleInspection;
         private ServiceProgress serviceProgress;
+        private Tools tools;
         private Maintain maintain;
         private Wash wash;
         private Setup setup;
@@ -43,6 +45,8 @@ namespace Finalproject.Views
             serviceBookingService = new ServiceBookingService();
             serviceBooking = new ServiceBooking();
             bookingRepository = new BookingServiceController();
+            toolController = new ToolController();
+            tools = new Tools();
             setup = new Setup();
             repair = new Repair();
             vehicleInspectionController = new VehicleInspectionController();
@@ -260,7 +264,29 @@ namespace Finalproject.Views
             RepairDataGridView1.AllowUserToAddRows = false;
             addbutton2();
         }
-         
+        private void showtools()
+        {
+            var tools = toolController.showTools();
+            bunifuDataGridView3.DataSource = tools;
+        }
+        private void SetupDataGridView7()
+        {
+            bunifuDataGridView3.AllowUserToAddRows = false;
+            addbuttons7();
+        }
+         private void addbuttons7()
+        {
+            var editButton = new DataGridViewButtonColumn
+            {
+                Name = "selecButton",
+                HeaderText = "select",
+                Width = 100,
+                Text = "select",
+                UseColumnTextForButtonValue = true
+            };
+            ServiceProgressDataGridView.Columns.Insert(8, editButton);
+        }
+
         private void addbutton2() 
         {
             var editButton = new DataGridViewButtonColumn
@@ -319,6 +345,7 @@ namespace Finalproject.Views
             showRepair();
             showwash();
             showprogress();
+            showtools();
         }
 
 
@@ -711,6 +738,13 @@ namespace Finalproject.Views
             serviceProgressController.UpdateServiceProgress(serviceProgress);
             bookingRepository.RemoveServiceBooking(id);
         }
+
+        private void Tools_Click(object sender, EventArgs e)
+        {
+
+        }
+        
+
     }
 
 }
