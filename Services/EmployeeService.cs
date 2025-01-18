@@ -25,24 +25,10 @@ namespace Finalproject.Services
         }
 
         // Method to get the last employee ID
-        public int getthelastemp()
-        {
-            string query = "SELECT MAX(EID) FROM Employee";
-            SqlCommand cmd = new SqlCommand(query, connection);
-            {
-                connection.Close();
-                connection.Open();
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                cmd.ExecuteNonQuery();
-                int lastEmpId = Convert.ToInt32(dt.Rows[0][0]);
-                return lastEmpId;
-            }
-        }
+        
 
         // Method to add a login entry for an employee
-        public void AddLogine(Employee employee, Login login)
+        public void AddLogine(Employee employee)
         {
             string query1 = "INSERT INTO Login (Username,Password,EID) VALUES (@Username,@Password,@EID)";
             SqlCommand cmd1 = new SqlCommand(query1, connection);
@@ -51,7 +37,14 @@ namespace Finalproject.Services
                 connection.Open();
                 cmd1.Parameters.AddWithValue("@Username", employee.username);
                 cmd1.Parameters.AddWithValue("@Password", employee.Password);
-                cmd1.Parameters.AddWithValue("@EID", login.EID);
+
+                // Get the EID from Employee table
+                string getEIDQuery = "SELECT EID FROM Employee WHERE Email = @Email";
+                SqlCommand getEIDCmd = new SqlCommand(getEIDQuery, connection);
+                getEIDCmd.Parameters.AddWithValue("@Email", employee.Email);
+                int EID = (int)getEIDCmd.ExecuteScalar();
+
+                cmd1.Parameters.AddWithValue("@EID", EID);
                 cmd1.ExecuteNonQuery();
             }
         }

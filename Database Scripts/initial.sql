@@ -223,6 +223,15 @@ CREATE TABLE NetProfit (
     CreatedAt DATETIME DEFAULT GETDATE()
 );
 
+CREATE TABLE SalesData (
+    ID INT PRIMARY KEY IDENTITY(1,1),
+    Month VARCHAR(50),
+    SalesAmount DECIMAL(18, 2),
+    ServiceAmount DECIMAL(18, 2),
+    TotalAmount AS (SalesAmount + ServiceAmount)
+);
+
+
 -- Example Insert Query
 INSERT INTO NetProfit (Revenue, Expenses, NetProfit) 
 VALUES (35534.00, 3444.00, 3000.00);

@@ -20,17 +20,17 @@ namespace Finalproject.Controllers
             employeeService = new EmployeeService();
         }
 
+        public void AddLogine(Employee employee)
+        {
+            employeeService.AddLogine(employee);
+        }
         // Method to add a new employee along with their role and department
         public void AddEmployee(Employee employee, Role role, Department department)
         {
             employeeService.AddEmployee(employee, role, department);
         }
 
-        // Method to add login details for an employee
-        public void AddLogine(Employee employee, Login login)
-        {
-            employeeService.AddLogine(employee, login);
-        }
+   
 
         // Method to get all employees
         public DataTable getEmployee()
@@ -69,10 +69,7 @@ namespace Finalproject.Controllers
         }
 
         // Method to get the last employee ID
-        public int getthelastemp()
-        {
-            return employeeService.getthelastemp();
-        }
+       
 
         // Method to update an employee's details by their ID
         public void UpdateEmployee(Employee employee, int EID)

@@ -1,4 +1,6 @@
-﻿using MaterialSkin;
+﻿using Finalproject.Controllers;
+using Finalproject.Models;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -14,10 +16,16 @@ namespace Finalproject.Views
 {
     public partial class Inventory_Manager : MaterialForm
     {
+
+        private readonly InventoryController inventoryController;
+        private Inventory inventory;
+
         public Inventory_Manager()
         {
             InitializeComponent();
             InitializeMaterialSkin();
+            inventoryController = new InventoryController();
+            inventory = new Inventory();
         }
 
         private void InitializeMaterialSkin()
@@ -32,6 +40,46 @@ namespace Finalproject.Views
         private void Inventory_Manager_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            inventory.Inventory_item_name = ItemNametxtbox.Text;
+            inventory.Category = "Spare Parts";
+            inventory.Qty = int.Parse(Quantitytxtbox.Text);
+            inventory.Per_price = decimal.Parse(PricePerItemtxtbox.Text);
+            inventory.Serial_number = SerialNumbertxtbox.Text;
+
+            inventoryController.AddInventory(inventory);
+
+            ItemNametxtbox.Text = "";
+            Quantitytxtbox.Text = "";
+            PricePerItemtxtbox.Text = "";
+            SerialNumbertxtbox.Text = "";
+
+            DataTable dt = inventoryController.getInventory();
+
+            sparePartDataGridView.DataSource = dt;
+        }
+
+        private void materialButton2_Click(object sender, EventArgs e)
+        {
+            inventory.Inventory_item_name = ToolNametxtbox.Text;
+            inventory.Category = "Tools";
+            inventory.Qty = int.Parse(materialTextBox1.Text);
+            inventory.Per_price = decimal.Parse(Descriptiontxtbox.Text);
+
+
+            inventoryController.AddInventory(inventory);
+
+            ItemNametxtbox.Text = "";
+            Quantitytxtbox.Text = "";
+            PricePerItemtxtbox.Text = "";
+            SerialNumbertxtbox.Text = "";
+
+            DataTable dt = inventoryController.getTools();
+
+            sparePartDataGridView.DataSource = dt;
         }
     }
 }

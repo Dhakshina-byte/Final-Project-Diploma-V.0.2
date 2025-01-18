@@ -21,6 +21,7 @@ namespace Finalproject.Views
     {
         private readonly VehicleController vehicleController;
         private readonly ServiceBookingService serviceBookingService;
+        private readonly InventoryController inventoryController; 
         private readonly BookingServiceController bookingRepository;
         private readonly washControllers washControllers;
         private readonly MaintainController maintainControllers;
@@ -32,6 +33,8 @@ namespace Finalproject.Views
         private VehicleInspection vehicleInspection;
         private ServiceProgress serviceProgress;
         private Maintain maintain;
+        private Tools tools;
+        private Request request;
         private Wash wash;
         private Setup setup;
         private Repair repair;
@@ -55,7 +58,9 @@ namespace Finalproject.Views
             serviceProgress = new ServiceProgress();
             vehicleInspection = new VehicleInspection();
             maintain = new Maintain();
-
+            request = new Request();
+            tools = new Tools();
+            inventoryController = new InventoryController();
 
             InitializeMaterialSkin();
         }
@@ -100,6 +105,13 @@ namespace Finalproject.Views
             SetupDataGridView1();
 
 
+        }
+
+        private void showtools()
+        {
+            var tools = inventoryController.showtools();
+            bunifuDataGridView3.DataSource = tools;
+           
         }
 
         private void showwash()
@@ -171,6 +183,29 @@ namespace Finalproject.Views
                 UseColumnTextForButtonValue = true
             };
             SetupDataGridView3.Columns.Insert(7, deleteButton);
+        }
+        private void showspareparts()
+        {
+            var spareparts = inventoryController.getInventory();
+            bunifuDataGridView4.DataSource = spareparts;
+            
+        }
+        private void SetupDataGridView7()
+        {
+            bunifuDataGridView4.AllowUserToAddRows = false;
+            addbuttons8();
+        }
+        private void addbuttons8()
+        {
+            var editButton = new DataGridViewButtonColumn
+            {
+                Name = "selecButton",
+                HeaderText = "select",
+                Width = 100,
+                Text = "select",
+                UseColumnTextForButtonValue = true
+            };
+            bunifuDataGridView4.Columns.Insert(6, editButton);
         }
 
         private void SetupDataGridView1()
@@ -307,7 +342,25 @@ namespace Finalproject.Views
             Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200,
             TextShade.WHITE);
         }
-
+         
+        private void showspareparts1()
+        {
+            var spareparts = inventoryController.getTools();
+            SparePartsDataGridView.DataSource = spareparts;
+            addbuttons5();
+        }
+        private void addbuttons5()
+        {
+            var editButton = new DataGridViewButtonColumn
+            {
+                Name = "selecButton",
+                HeaderText = "select",
+                Width = 100,
+                Text = "select",
+                UseColumnTextForButtonValue = true
+            };
+            SparePartsDataGridView.Columns.Insert(6, editButton);
+        }
 
         private void ServiceManeger_Load(object sender, EventArgs e)
         {
@@ -319,6 +372,9 @@ namespace Finalproject.Views
             showRepair();
             showwash();
             showprogress();
+            showspareparts1();
+            showtools();
+            showspareparts();
         }
 
 
@@ -702,6 +758,8 @@ namespace Finalproject.Views
             }
         }
 
+        
+
         private void materialButton3_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(label23.Text);
@@ -711,6 +769,32 @@ namespace Finalproject.Views
             serviceProgressController.UpdateServiceProgress(serviceProgress);
             bookingRepository.RemoveServiceBooking(id);
         }
+
+        private void materialButton4_Click(object sender, EventArgs e)
+        {
+            request.Request_type = "Spare Parts";
+            request.Request_Qty = int.Parse(materialTextBox1.Text); 
+            request.Request_Desc = materialLabel6.Text;
+            tools.Tool_name = materialLabel5.Text;
+            tools.Tool_desc = materialLabel6.Text;
+            tools.Tool_status = "Pending";
+            tools.User_ID = "1";
+            inventoryController.AddRequest(request, tools);
+        }
+
+        private void SparePartsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (SparePartsDataGridView.Columns[e.ColumnIndex].Name == "selecButton")
+            {
+                DataGridViewRow rows1 = SparePartsDataGridView.Rows[e.RowIndex];
+                if (MessageBox.Show(string.Format("Are you sure you want to Edit this row?", rows1.Cells["Tool_ID"].Value), "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    materialLabel5.Text = Convert.ToString(rows1.Cells["Tool_Name"].Value);
+                    materialLabel6.Text = Convert.ToString(rows1.Cells["Tool_Description"].Value);
+                }
+            }
+        }
+
     }
 
 }

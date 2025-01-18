@@ -30,12 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServiceHead));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.Home = new System.Windows.Forms.TabPage();
             this.Employee = new System.Windows.Forms.TabPage();
-            this.ServiceBooking = new System.Windows.Forms.TabPage();
-            this.CustomerComplain = new System.Windows.Forms.TabPage();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.Empsavebtn = new MaterialSkin.Controls.MaterialButton();
             this.Empcancelbtn = new MaterialSkin.Controls.MaterialButton();
             this.ll = new System.Windows.Forms.Label();
@@ -53,9 +56,21 @@
             this.EmpSearchtxtbox = new MaterialSkin.Controls.MaterialTextBox();
             this.EmployeeDataGridView = new System.Windows.Forms.DataGridView();
             this.EmpSearchbtn = new System.Windows.Forms.Button();
+            this.ServiceBooking = new System.Windows.Forms.TabPage();
+            this.CustomerComplain = new System.Windows.Forms.TabPage();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.bunifuDataGridView1 = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.bunifuDataGridView2 = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.submitButton = new MaterialSkin.Controls.MaterialButton();
+            this.customerNameTextBox = new MaterialSkin.Controls.MaterialTextBox();
+            this.complaintTextBox = new MaterialSkin.Controls.MaterialTextBox();
             this.materialTabControl1.SuspendLayout();
             this.Employee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGridView)).BeginInit();
+            this.ServiceBooking.SuspendLayout();
+            this.CustomerComplain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -81,7 +96,7 @@
             this.Home.Location = new System.Drawing.Point(4, 39);
             this.Home.Name = "Home";
             this.Home.Padding = new System.Windows.Forms.Padding(3);
-            this.Home.Size = new System.Drawing.Size(1910, 864);
+            this.Home.Size = new System.Drawing.Size(1928, 911);
             this.Home.TabIndex = 0;
             this.Home.Text = "Home";
             this.Home.UseVisualStyleBackColor = true;
@@ -113,35 +128,6 @@
             this.Employee.TabIndex = 1;
             this.Employee.Text = "Employee";
             this.Employee.UseVisualStyleBackColor = true;
-            // 
-            // ServiceBooking
-            // 
-            this.ServiceBooking.ImageKey = "icons8-service-32.png";
-            this.ServiceBooking.Location = new System.Drawing.Point(4, 39);
-            this.ServiceBooking.Name = "ServiceBooking";
-            this.ServiceBooking.Size = new System.Drawing.Size(1910, 864);
-            this.ServiceBooking.TabIndex = 2;
-            this.ServiceBooking.Text = "Service Booking";
-            this.ServiceBooking.UseVisualStyleBackColor = true;
-            // 
-            // CustomerComplain
-            // 
-            this.CustomerComplain.ImageKey = "icons8-complaint-32.png";
-            this.CustomerComplain.Location = new System.Drawing.Point(4, 39);
-            this.CustomerComplain.Name = "CustomerComplain";
-            this.CustomerComplain.Size = new System.Drawing.Size(1910, 864);
-            this.CustomerComplain.TabIndex = 3;
-            this.CustomerComplain.Text = "Customer Complain";
-            this.CustomerComplain.UseVisualStyleBackColor = true;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "icons8-complaint-32.png");
-            this.imageList1.Images.SetKeyName(1, "icons8-service-32.png");
-            this.imageList1.Images.SetKeyName(2, "icons8-home-32.png");
-            this.imageList1.Images.SetKeyName(3, "icons8-employee-32.png");
             // 
             // Empsavebtn
             // 
@@ -236,7 +222,7 @@
             this.EmpCitytxtbox.AnimateReadOnly = false;
             this.EmpCitytxtbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EmpCitytxtbox.Depth = 0;
-            this.EmpCitytxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EmpCitytxtbox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.EmpCitytxtbox.LeadingIcon = null;
             this.EmpCitytxtbox.Location = new System.Drawing.Point(1519, 448);
             this.EmpCitytxtbox.MaxLength = 50;
@@ -271,7 +257,7 @@
             this.EmpMobiletxtbox.AnimateReadOnly = false;
             this.EmpMobiletxtbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EmpMobiletxtbox.Depth = 0;
-            this.EmpMobiletxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EmpMobiletxtbox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.EmpMobiletxtbox.LeadingIcon = null;
             this.EmpMobiletxtbox.Location = new System.Drawing.Point(1519, 250);
             this.EmpMobiletxtbox.MaxLength = 50;
@@ -297,7 +283,7 @@
             this.EmpEmailtxtbox.AnimateReadOnly = false;
             this.EmpEmailtxtbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EmpEmailtxtbox.Depth = 0;
-            this.EmpEmailtxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EmpEmailtxtbox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.EmpEmailtxtbox.LeadingIcon = null;
             this.EmpEmailtxtbox.Location = new System.Drawing.Point(1519, 150);
             this.EmpEmailtxtbox.MaxLength = 50;
@@ -323,7 +309,7 @@
             this.EmpNametxtbox.AnimateReadOnly = false;
             this.EmpNametxtbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EmpNametxtbox.Depth = 0;
-            this.EmpNametxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EmpNametxtbox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.EmpNametxtbox.LeadingIcon = null;
             this.EmpNametxtbox.Location = new System.Drawing.Point(1519, 53);
             this.EmpNametxtbox.MaxLength = 50;
@@ -340,7 +326,7 @@
             this.EmpSearchtxtbox.AnimateReadOnly = false;
             this.EmpSearchtxtbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.EmpSearchtxtbox.Depth = 0;
-            this.EmpSearchtxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EmpSearchtxtbox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.EmpSearchtxtbox.LeadingIcon = null;
             this.EmpSearchtxtbox.Location = new System.Drawing.Point(786, 11);
             this.EmpSearchtxtbox.MaxLength = 50;
@@ -371,6 +357,216 @@
             this.EmpSearchbtn.TabIndex = 62;
             this.EmpSearchbtn.UseVisualStyleBackColor = true;
             // 
+            // ServiceBooking
+            // 
+            this.ServiceBooking.Controls.Add(this.bunifuDataGridView1);
+            this.ServiceBooking.ImageKey = "icons8-service-32.png";
+            this.ServiceBooking.Location = new System.Drawing.Point(4, 39);
+            this.ServiceBooking.Name = "ServiceBooking";
+            this.ServiceBooking.Size = new System.Drawing.Size(1928, 911);
+            this.ServiceBooking.TabIndex = 2;
+            this.ServiceBooking.Text = "Service Booking";
+            this.ServiceBooking.UseVisualStyleBackColor = true;
+            // 
+            // CustomerComplain
+            // 
+            this.CustomerComplain.Controls.Add(this.complaintTextBox);
+            this.CustomerComplain.Controls.Add(this.customerNameTextBox);
+            this.CustomerComplain.Controls.Add(this.submitButton);
+            this.CustomerComplain.Controls.Add(this.bunifuDataGridView2);
+            this.CustomerComplain.ImageKey = "icons8-complaint-32.png";
+            this.CustomerComplain.Location = new System.Drawing.Point(4, 39);
+            this.CustomerComplain.Name = "CustomerComplain";
+            this.CustomerComplain.Size = new System.Drawing.Size(1928, 911);
+            this.CustomerComplain.TabIndex = 3;
+            this.CustomerComplain.Text = "Customer Complain";
+            this.CustomerComplain.UseVisualStyleBackColor = true;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "icons8-complaint-32.png");
+            this.imageList1.Images.SetKeyName(1, "icons8-service-32.png");
+            this.imageList1.Images.SetKeyName(2, "icons8-home-32.png");
+            this.imageList1.Images.SetKeyName(3, "icons8-employee-32.png");
+            // 
+            // bunifuDataGridView1
+            // 
+            this.bunifuDataGridView1.AllowCustomTheming = false;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.bunifuDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.bunifuDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.bunifuDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bunifuDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.bunifuDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.bunifuDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.bunifuDataGridView1.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.bunifuDataGridView1.CurrentTheme.BackColor = System.Drawing.Color.White;
+            this.bunifuDataGridView1.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.bunifuDataGridView1.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuDataGridView1.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuDataGridView1.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.bunifuDataGridView1.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            this.bunifuDataGridView1.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.bunifuDataGridView1.CurrentTheme.Name = null;
+            this.bunifuDataGridView1.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.bunifuDataGridView1.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuDataGridView1.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.bunifuDataGridView1.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.bunifuDataGridView1.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bunifuDataGridView1.DefaultCellStyle = dataGridViewCellStyle12;
+            this.bunifuDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bunifuDataGridView1.EnableHeadersVisualStyles = false;
+            this.bunifuDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.bunifuDataGridView1.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuDataGridView1.HeaderBgColor = System.Drawing.Color.Empty;
+            this.bunifuDataGridView1.HeaderForeColor = System.Drawing.Color.White;
+            this.bunifuDataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.bunifuDataGridView1.Name = "bunifuDataGridView1";
+            this.bunifuDataGridView1.RowHeadersVisible = false;
+            this.bunifuDataGridView1.RowHeadersWidth = 51;
+            this.bunifuDataGridView1.RowTemplate.Height = 40;
+            this.bunifuDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.bunifuDataGridView1.Size = new System.Drawing.Size(1928, 911);
+            this.bunifuDataGridView1.TabIndex = 0;
+            this.bunifuDataGridView1.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            // 
+            // bunifuDataGridView2
+            // 
+            this.bunifuDataGridView2.AllowCustomTheming = false;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.bunifuDataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.bunifuDataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.bunifuDataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bunifuDataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.bunifuDataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuDataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.bunifuDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.bunifuDataGridView2.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.bunifuDataGridView2.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuDataGridView2.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.bunifuDataGridView2.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.bunifuDataGridView2.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.bunifuDataGridView2.CurrentTheme.BackColor = System.Drawing.Color.White;
+            this.bunifuDataGridView2.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.bunifuDataGridView2.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuDataGridView2.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuDataGridView2.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.bunifuDataGridView2.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            this.bunifuDataGridView2.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.bunifuDataGridView2.CurrentTheme.Name = null;
+            this.bunifuDataGridView2.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.bunifuDataGridView2.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.bunifuDataGridView2.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.bunifuDataGridView2.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.bunifuDataGridView2.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bunifuDataGridView2.DefaultCellStyle = dataGridViewCellStyle9;
+            this.bunifuDataGridView2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.bunifuDataGridView2.EnableHeadersVisualStyles = false;
+            this.bunifuDataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.bunifuDataGridView2.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuDataGridView2.HeaderBgColor = System.Drawing.Color.Empty;
+            this.bunifuDataGridView2.HeaderForeColor = System.Drawing.Color.White;
+            this.bunifuDataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.bunifuDataGridView2.Name = "bunifuDataGridView2";
+            this.bunifuDataGridView2.RowHeadersVisible = false;
+            this.bunifuDataGridView2.RowHeadersWidth = 51;
+            this.bunifuDataGridView2.RowTemplate.Height = 40;
+            this.bunifuDataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.bunifuDataGridView2.Size = new System.Drawing.Size(1265, 911);
+            this.bunifuDataGridView2.TabIndex = 0;
+            this.bunifuDataGridView2.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            // 
+            // submitButton
+            // 
+            this.submitButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.submitButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.submitButton.Depth = 0;
+            this.submitButton.HighEmphasis = true;
+            this.submitButton.Icon = null;
+            this.submitButton.Location = new System.Drawing.Point(1709, 810);
+            this.submitButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.submitButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.submitButton.Name = "submitButton";
+            this.submitButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.submitButton.Size = new System.Drawing.Size(75, 36);
+            this.submitButton.TabIndex = 1;
+            this.submitButton.Text = "submit";
+            this.submitButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.submitButton.UseAccentColor = false;
+            this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click_1);
+            // 
+            // customerNameTextBox
+            // 
+            this.customerNameTextBox.AnimateReadOnly = false;
+            this.customerNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.customerNameTextBox.Depth = 0;
+            this.customerNameTextBox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.customerNameTextBox.LeadingIcon = null;
+            this.customerNameTextBox.Location = new System.Drawing.Point(1338, 71);
+            this.customerNameTextBox.MaxLength = 50;
+            this.customerNameTextBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.customerNameTextBox.Multiline = false;
+            this.customerNameTextBox.Name = "customerNameTextBox";
+            this.customerNameTextBox.Size = new System.Drawing.Size(551, 50);
+            this.customerNameTextBox.TabIndex = 2;
+            this.customerNameTextBox.Text = "";
+            this.customerNameTextBox.TrailingIcon = null;
+            // 
+            // complaintTextBox
+            // 
+            this.complaintTextBox.AnimateReadOnly = false;
+            this.complaintTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.complaintTextBox.Depth = 0;
+            this.complaintTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.complaintTextBox.LeadingIcon = null;
+            this.complaintTextBox.Location = new System.Drawing.Point(1338, 208);
+            this.complaintTextBox.MaxLength = 50;
+            this.complaintTextBox.MouseState = MaterialSkin.MouseState.OUT;
+            this.complaintTextBox.Multiline = false;
+            this.complaintTextBox.Name = "complaintTextBox";
+            this.complaintTextBox.Size = new System.Drawing.Size(551, 50);
+            this.complaintTextBox.TabIndex = 3;
+            this.complaintTextBox.Text = "";
+            this.complaintTextBox.TrailingIcon = null;
+            // 
             // ServiceHead
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -386,6 +582,11 @@
             this.Employee.ResumeLayout(false);
             this.Employee.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGridView)).EndInit();
+            this.ServiceBooking.ResumeLayout(false);
+            this.CustomerComplain.ResumeLayout(false);
+            this.CustomerComplain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -415,5 +616,10 @@
         private MaterialSkin.Controls.MaterialTextBox EmpSearchtxtbox;
         private System.Windows.Forms.DataGridView EmployeeDataGridView;
         private System.Windows.Forms.Button EmpSearchbtn;
+        private Bunifu.UI.WinForms.BunifuDataGridView bunifuDataGridView1;
+        private Bunifu.UI.WinForms.BunifuDataGridView bunifuDataGridView2;
+        private MaterialSkin.Controls.MaterialButton submitButton;
+        private MaterialSkin.Controls.MaterialTextBox complaintTextBox;
+        private MaterialSkin.Controls.MaterialTextBox customerNameTextBox;
     }
 }

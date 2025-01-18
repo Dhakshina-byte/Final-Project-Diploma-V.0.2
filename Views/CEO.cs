@@ -305,10 +305,6 @@ namespace Finalproject.Views
             employee.Address = EmpAddresstxtbox.Text;
             employee.username = EmpNametxtbox.Text;
             employee.Password = "root";
-            int lastnum = employeeController.getthelastemp();
-            lastnum++;
-            login.EID = lastnum;
-            Console.WriteLine(login.EID);
 
             if (EmpRolebox.SelectedItem.ToString() == "Accountant")
             {
@@ -330,7 +326,7 @@ namespace Finalproject.Views
                 role.Role_ID = 4;
                 department.D_ID = 2;
             }
-            employeeController.AddLogine(employee, login);
+            employeeController.AddLogine(employee);
             employeeController.AddEmployee(employee, role, department);
             Console.WriteLine(role.Role_ID);
             EmpNametxtbox.Text = "";
@@ -450,6 +446,17 @@ namespace Finalproject.Views
             decimal price = Convert.ToDecimal(pricetxtbox.Text);
             string chassis_no = chassistxtbox.Text;
             vehicleController.UpdatePrice(price, chassis_no);
+        }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void materialButton2_Click(object sender, EventArgs e)
+        {
+            AnnualRpt annualRpt = new AnnualRpt();
+            annualRpt.Show();
         }
     }
 }
