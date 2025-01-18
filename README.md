@@ -48,9 +48,6 @@ Contributions are welcome! Please fork the repository and submit a pull request.
 ## License
 This project is licensed under the MIT License.
 
-## Contact
-For any questions or inquiries, please contact your-email@example.com.
-
 ---
 **Note**: Ensure to replace Bunifu.UI.WinForms components with System.Windows.Forms components to avoid issues with cracked versions.
 
