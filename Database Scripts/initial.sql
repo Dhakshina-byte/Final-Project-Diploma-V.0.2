@@ -60,29 +60,33 @@ CREATE TABLE Service_Booking (
     Booking_ID INT PRIMARY KEY IDENTITY(1,1),
     Vehicle_ID INT,
     Booking_Date DATE,
-    Service_Type VARCHAR(225),
+    Inspection BIT,
+	Maintain BIT,
+	Setup BIT,
+	Repair BIT,
+	wash BIT,
     Status VARCHAR(20),
     FOREIGN KEY (Vehicle_ID) REFERENCES Vehicle(Vehicle_ID)
 );
 
--- Vehicle Inspection Table
 CREATE TABLE Vehicle_Inspection (
     Inspection_ID INT PRIMARY KEY IDENTITY(1,1),
     Vehicle_ID INT,
     Inspection_Date DATE,
-    Inspector_Name VARCHAR(225),
-    Inspection_Result VARCHAR(225),
+    Inspector_DESC VARCHAR(225),
+    Status VARCHAR(20),
     FOREIGN KEY (Vehicle_ID) REFERENCES Vehicle(Vehicle_ID)
 );
 
--- Maintain Table
 CREATE TABLE Maintain (
     Maintain_ID INT PRIMARY KEY IDENTITY(1,1),
     Vehicle_ID INT,
     Maintain_Date DATE,
     Description VARCHAR(255),
+	Status VARCHAR(20),
     FOREIGN KEY (Vehicle_ID) REFERENCES Vehicle(Vehicle_ID)
 );
+
 
 -- Setup Table
 CREATE TABLE Setup (
